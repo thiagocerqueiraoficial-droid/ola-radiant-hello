@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Lp03RouteImport } from './routes/lp-03'
 import { Route as Lp02RouteImport } from './routes/lp-02'
 import { Route as Lp01RouteImport } from './routes/lp-01'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Lp03Route = Lp03RouteImport.update({
+  id: '/lp-03',
+  path: '/lp-03',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Lp02Route = Lp02RouteImport.update({
   id: '/lp-02',
   path: '/lp-02',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
+  '/lp-03': typeof Lp03Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
+  '/lp-03': typeof Lp03Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
+  '/lp-03': typeof Lp03Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lp-01' | '/lp-02'
+  fullPaths: '/' | '/lp-01' | '/lp-02' | '/lp-03'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lp-01' | '/lp-02'
-  id: '__root__' | '/' | '/lp-01' | '/lp-02'
+  to: '/' | '/lp-01' | '/lp-02' | '/lp-03'
+  id: '__root__' | '/' | '/lp-01' | '/lp-02' | '/lp-03'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Lp01Route: typeof Lp01Route
   Lp02Route: typeof Lp02Route
+  Lp03Route: typeof Lp03Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/lp-03': {
+      id: '/lp-03'
+      path: '/lp-03'
+      fullPath: '/lp-03'
+      preLoaderRoute: typeof Lp03RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lp-02': {
       id: '/lp-02'
       path: '/lp-02'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Lp01Route: Lp01Route,
   Lp02Route: Lp02Route,
+  Lp03Route: Lp03Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
