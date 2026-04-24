@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import traderPhoto from "@/assets/trader-delucca.png";
 import traderPhoto2 from "@/assets/trader-delucca-2.png";
 
@@ -508,6 +509,7 @@ function FAQ() {
 function FinalCta() {
   return (
     <section
+      id="lp01-final-cta"
       className="w-full px-6 py-24 text-center"
       style={{
         background: YELLOW,
