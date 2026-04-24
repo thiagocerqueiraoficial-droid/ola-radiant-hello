@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import traderPhoto from "@/assets/trader-delucca.png";
 
 export const Route = createFileRoute("/lp-01")({
   component: LP01,
@@ -149,20 +150,12 @@ function Hero() {
               border: `1px solid ${LINE}`,
             }}
           >
-            <span
-              className="absolute"
-              style={{
-                top: "-30px",
-                left: "-10px",
-                ...display,
-                fontSize: "360px",
-                lineHeight: 1,
-                color: YELLOW,
-                opacity: 0.18,
-              }}
-            >
-              A
-            </span>
+            <img
+              src={traderPhoto}
+              alt={`${NOME_TRADER} · Trader`}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+            />
 
             <div
               className="absolute left-0 right-0 bottom-0 px-5 py-4"
@@ -259,10 +252,10 @@ function Authority() {
     <section style={{ background: BG3 }}>
       <div className="mx-auto max-w-[1200px] px-6 py-20 grid md:grid-cols-3 gap-10 items-center">
         <div
-          className="aspect-square flex items-center justify-center"
+          className="aspect-square overflow-hidden"
           style={{ background: "linear-gradient(135deg,#1a1a1a,#070707)", border: `1px solid ${LINE}` }}
         >
-          <span style={{ ...display, color: YELLOW, fontSize: "240px", lineHeight: 1 }}>A</span>
+          <img src={traderPhoto} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="md:col-span-2">
           <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>

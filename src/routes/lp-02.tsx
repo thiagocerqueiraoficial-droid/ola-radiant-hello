@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import traderPhoto from "@/assets/trader-delucca.png";
 
 export const Route = createFileRoute("/lp-02")({
   component: LP02VSL,
@@ -136,35 +137,47 @@ function Player({ onPlay, started }: { onPlay: () => void; started: boolean }) {
           type="button"
           onClick={onPlay}
           className="absolute inset-0 w-full h-full flex flex-col items-center justify-center"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, #1a1a1a 0%, #050505 70%, #000 100%)",
-            cursor: "pointer",
-          }}
+          style={{ cursor: "pointer", background: "#000" }}
         >
+          <img
+            src={traderPhoto}
+            alt={`${NOME_TRADER} · poster`}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: 0.75 }}
+          />
           <div
-            className="flex items-center justify-center"
+            aria-hidden
+            className="absolute inset-0"
             style={{
-              width: 88,
-              height: 88,
-              borderRadius: 999,
-              background: GREEN,
-              animation: "lp02-ring 1.8s ease-out infinite",
+              background:
+                "radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.95) 100%)",
             }}
-          >
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="#000" aria-hidden>
-              <path d="M8 5v14l11-7z" />
-            </svg>
+          />
+          <div className="relative flex flex-col items-center" style={{ zIndex: 2 }}>
+            <div
+              className="flex items-center justify-center"
+              style={{
+                width: 88,
+                height: 88,
+                borderRadius: 999,
+                background: GREEN,
+                animation: "lp02-ring 1.8s ease-out infinite",
+              }}
+            >
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="#000" aria-hidden>
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <p
+              className="mt-6"
+              style={{ ...body, color: TEXT, fontWeight: 700, fontSize: 14, letterSpacing: "0.2em", textTransform: "uppercase" }}
+            >
+              Clique para assistir
+            </p>
+            <p className="mt-2" style={{ ...body, color: MUTED, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase" }}>
+              Aumente o volume · 4:00
+            </p>
           </div>
-          <p
-            className="mt-6"
-            style={{ ...body, color: TEXT, fontWeight: 700, fontSize: 14, letterSpacing: "0.2em", textTransform: "uppercase" }}
-          >
-            Clique para assistir
-          </p>
-          <p className="mt-2" style={{ ...body, color: MUTED, fontSize: 12, letterSpacing: "0.14em", textTransform: "uppercase" }}>
-            Aumente o volume · 4:00
-          </p>
         </button>
       ) : (
         <div className="absolute inset-0 w-full h-full flex items-center justify-center" style={{ background: "#000" }}>
