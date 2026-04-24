@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import traderPhoto from "@/assets/trader-delucca.png";
 
 export const Route = createFileRoute("/lp-02")({
   component: LP02VSL,
