@@ -112,7 +112,7 @@ function Hero() {
           className="mt-3 text-center"
           style={{ ...mono, fontSize: "11px", letterSpacing: "0.2em", color: INK_SOFT, textTransform: "uppercase" }}
         >
-          {NOME_TRADER} · Trader · Brasília, 2026
+          {NOME_TRADER} · Trader · 2026
         </figcaption>
       </figure>
     </section>
