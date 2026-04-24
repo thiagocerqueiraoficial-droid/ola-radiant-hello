@@ -559,6 +559,69 @@ function Footer() {
   );
 }
 
+function FloatingCta() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const finalCta = document.getElementById("lp01-final-cta");
+    if (!finalCta) return;
+
+    const onScroll = () => {
+      // show after scrolling past first viewport
+      const scrolled = window.scrollY > window.innerHeight * 0.6;
+      setVisible(scrolled);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(false);
+        else onScroll();
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(finalCta);
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <div
+      className="fixed left-1/2 z-50 px-4 w-full max-w-[420px]"
+      style={{
+        bottom: 20,
+        transform: `translateX(-50%) translateY(${visible ? "0" : "140%"})`,
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
+        transition: "transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease",
+      }}
+    >
+      <a
+        href={LINK_TELEGRAM}
+        className="flex items-center justify-center w-full"
+        style={{
+          ...body,
+          background: "#000",
+          color: YELLOW,
+          fontWeight: 900,
+          textTransform: "uppercase",
+          padding: "18px 24px",
+          fontSize: "15px",
+          letterSpacing: "0.04em",
+          boxShadow: "6px 6px 0 rgba(0,0,0,0.35), 0 8px 30px rgba(0,0,0,0.5)",
+          border: `2px solid ${YELLOW}`,
+        }}
+      >
+        Entrar no Telegram Agora →
+      </a>
+    </div>
+  );
+}
+
 function LP01() {
   return (
     <main style={{ background: BG, color: TEXT, ...body, scrollBehavior: "smooth" }} className="min-h-screen">
@@ -570,6 +633,7 @@ function LP01() {
       <FAQ />
       <FinalCta />
       <Footer />
+      <FloatingCta />
     </main>
   );
 }
