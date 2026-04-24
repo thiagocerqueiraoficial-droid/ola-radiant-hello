@@ -444,7 +444,6 @@ function LP01() {
       <Stats />
       <Benefits />
       <Authority />
-      <Proof />
       <FAQ />
       <FinalCta />
       <Footer />
