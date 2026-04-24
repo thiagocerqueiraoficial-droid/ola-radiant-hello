@@ -206,22 +206,50 @@ function Hero() {
 
 function Stats() {
   const items = [
-    { n: "99%", l: "Acerto nas Lives" },
+    { n: "99%", l: "Acerto nas Lives", big: true },
     { n: "0", l: "Gale ou Proteção" },
     { n: "5x", l: "Lives na Semana" },
     { n: "12k+", l: "Alunos Ativos" },
   ];
   return (
     <section style={{ background: BG3, borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
-      <div className="mx-auto max-w-[1200px] px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-        {items.map((s, i) => (
-          <div key={i} className="text-center md:text-left">
-            <p style={{ ...display, color: YELLOW, fontSize: "72px", lineHeight: 1 }}>{s.n}</p>
-            <p className="mt-2" style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>
-              {s.l}
-            </p>
-          </div>
-        ))}
+      <div className="mx-auto max-w-[1320px] px-6 py-16 md:py-24">
+        <div className="flex items-baseline justify-between mb-12">
+          <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+            § 02 — NÚMEROS
+          </p>
+          <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em" }}>ATUALIZADO HOJE</span>
+        </div>
+        <div className="grid grid-cols-12 gap-x-6 gap-y-10 items-end">
+          {items.map((s, i) => {
+            const span = s.big ? "col-span-12 md:col-span-6" : "col-span-6 md:col-span-2";
+            return (
+              <div
+                key={i}
+                className={span}
+                style={i > 0 ? { borderLeft: `1px solid ${LINE}`, paddingLeft: 20 } : {}}
+              >
+                <p
+                  className={s.big ? "text-[110px] md:text-[180px]" : "text-[56px] md:text-[80px]"}
+                  style={{
+                    ...display,
+                    color: s.big ? YELLOW : TEXT,
+                    lineHeight: 0.85,
+                    fontStyle: s.big ? "italic" : "normal",
+                  }}
+                >
+                  {s.n}
+                </p>
+                <p
+                  className="mt-3"
+                  style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 600 }}
+                >
+                  {s.l}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
