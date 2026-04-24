@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import traderPhoto from "@/assets/trader-delucca.png";
+import traderPhoto2 from "@/assets/trader-delucca-2.png";
 
 export const Route = createFileRoute("/lp-01")({
   component: LP01,
@@ -255,7 +256,7 @@ function Authority() {
           className="aspect-square overflow-hidden"
           style={{ background: "linear-gradient(135deg,#1a1a1a,#070707)", border: `1px solid ${LINE}` }}
         >
-          <img src={traderPhoto} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
+          <img src={traderPhoto2} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="md:col-span-2">
           <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
