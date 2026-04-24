@@ -353,19 +353,6 @@ function FooterDisclosure() {
   return (
     <footer style={{ background: PAPER, borderTop: `1px solid ${RULE}` }}>
       <div className="mx-auto max-w-[1100px] px-5 py-10">
-        <div
-          className="p-6"
-          style={{ background: "#fbecec", borderLeft: `4px solid ${ALERT}` }}
-        >
-          <p
-            style={{ ...meta, color: ALERT, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700 }}
-          >
-            Aviso de transparência
-          </p>
-          <p className="mt-3" style={{ ...serif, color: INK, fontSize: 14, lineHeight: 1.6 }}>
-            Este conteúdo é patrocinado pela Alpha Academy. As informações apresentadas foram fornecidas pela empresa e não constituem recomendação de investimento. Resultados passados não garantem resultados futuros. Operações no mercado financeiro envolvem risco de perda de capital.
-          </p>
-        </div>
         <p
           className="mt-8 text-center"
           style={{ ...meta, color: INK_SOFT, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase" }}
