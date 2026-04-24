@@ -339,27 +339,49 @@ function Benefits() {
 
 function Authority() {
   return (
-    <section style={{ background: BG3 }}>
-      <div className="mx-auto max-w-[1200px] px-6 py-20 grid md:grid-cols-3 gap-10 items-center">
-        <div
-          className="aspect-square overflow-hidden"
-          style={{ background: "linear-gradient(135deg,#1a1a1a,#070707)", border: `1px solid ${LINE}` }}
-        >
-          <img src={traderPhoto2} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div className="md:col-span-2">
-          <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
-            QUEM OPERA COM VOCÊ
+    <section style={{ background: BG3, borderTop: `1px solid ${LINE}` }}>
+      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32 grid grid-cols-12 gap-x-6 gap-y-12">
+        {/* Left column: section marker + huge name */}
+        <div className="col-span-12 md:col-span-7 md:pt-8">
+          <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+            § 04 — QUEM OPERA COM VOCÊ
           </p>
-          <h2 className="mt-3 text-5xl sm:text-7xl" style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 1 }}>
-            {NOME_TRADER}.
+          <h2
+            className="mt-6 text-[72px] sm:text-[120px] md:text-[180px]"
+            style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 0.82, fontStyle: "italic" }}
+          >
+            {NOME_TRADER}
           </h2>
-          <p className="mt-6" style={{ ...body, color: TEXT, fontSize: "17px", lineHeight: 1.6 }}>
-            Sou trader há mais de 6 anos. Passei pelo mercado de sinal pago, de robô que prometia o mundo, e de gente que sumia quando o gráfico virava contra.
-          </p>
-          <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "17px", lineHeight: 1.6 }}>
-            Resolvi fazer diferente. Abro a tela, opero ao vivo todos os dias, e você vê tudo. Os acertos, os erros, a gestão. Se funciona, funciona na sua frente.
-          </p>
+          <div
+            className="mt-8 grid grid-cols-12 gap-x-6"
+            style={{ borderTop: `1px solid ${LINE}`, paddingTop: 24 }}
+          >
+            <div className="col-span-12 md:col-span-1">
+              <p style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.2em", fontWeight: 700 }}>BIO</p>
+            </div>
+            <div className="col-span-12 md:col-span-11 max-w-[560px]">
+              <p style={{ ...body, color: TEXT, fontSize: "18px", lineHeight: 1.55, fontWeight: 500 }}>
+                Sou trader há mais de 6 anos. Passei pelo mercado de sinal pago, de robô que prometia o mundo, e de gente que sumia quando o gráfico virava contra.
+              </p>
+              <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "16px", lineHeight: 1.6 }}>
+                Resolvi fazer diferente. Abro a tela, opero ao vivo todos os dias, e você vê tudo. Os acertos, os erros, a gestão. Se funciona, funciona na sua frente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right column: portrait, vertical, offset */}
+        <div className="col-span-12 md:col-span-5 md:-mt-8">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ aspectRatio: "4/5", background: "linear-gradient(135deg,#1a1a1a,#070707)", border: `1px solid ${LINE}` }}
+          >
+            <img src={traderPhoto2} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div className="mt-4 flex items-center justify-between" style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em" }}>
+            <span>FIG. 01 · {NOME_TRADER.toUpperCase()}</span>
+            <span>2026</span>
+          </div>
         </div>
       </div>
     </section>
