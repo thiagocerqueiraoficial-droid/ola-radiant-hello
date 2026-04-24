@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
   }),
 });
 
-const NOME_TRADER = "{{NOME_TRADER}}";
+const NOME_TRADER = "De Lucca";
 const LINK_TELEGRAM = "{{LINK_TELEGRAM}}";
 
 const PAPER = "#f4f0e6";
