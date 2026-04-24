@@ -85,7 +85,7 @@ const QUESTIONS: Question[] = [
 ];
 
 const LOADING_MSGS = [
-  "Cruzando com base de 12 mil operadores",
+  "Cruzando com base de 16 mil operadores",
   "Calculando seu perfil comportamental",
   "Identificando maior oportunidade pra você",
   "Gerando recomendações personalizadas",

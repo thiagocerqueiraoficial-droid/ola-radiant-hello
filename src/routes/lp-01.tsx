@@ -280,7 +280,7 @@ function Benefits() {
     {
       n: "IV",
       t: "Comunidade ativa",
-      d: "Mais de 12 mil operadores trocando leitura, estratégia e call do dia. Ninguém opera sozinho aqui.",
+      d: "Mais de 16 mil operadores trocando leitura, estratégia e call do dia. Ninguém opera sozinho aqui.",
       span: "col-span-12 md:col-span-7",
       tall: true,
     },

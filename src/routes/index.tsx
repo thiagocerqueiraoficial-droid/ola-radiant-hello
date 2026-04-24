@@ -291,7 +291,7 @@ function Body() {
         {[
           "Sala ao vivo todos os dias. Eu entro, abro o gráfico, opero. Você assiste e copia se quiser.",
           "Curso completo liberado. Do básico ao avançado. Leitura, psicologia, gestão. Sem custo.",
-          "Comunidade de 12 mil operadores ativos. Gente que já passou pelo que você tá passando.",
+          "Comunidade de 16 mil operadores ativos. Gente que já passou pelo que você tá passando.",
           "Avisos prioritários. Você é notificado antes da sala abrir. Nada de chegar quando a operação já acabou.",
         ].map((item, i) => (
           <li
