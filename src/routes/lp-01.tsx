@@ -102,11 +102,27 @@ function Hero() {
       className="relative w-full overflow-hidden"
       style={{
         background: BG,
-        backgroundImage: `radial-gradient(circle at 0% 0%, rgba(255,212,0,0.08), transparent 45%), radial-gradient(circle at 100% 100%, rgba(255,77,0,0.08), transparent 45%)`,
+        backgroundImage: `radial-gradient(circle at 0% 0%, rgba(255,212,0,0.10), transparent 50%), radial-gradient(circle at 100% 100%, rgba(255,77,0,0.08), transparent 45%)`,
       }}
     >
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-        <div>
+      {/* Vertical edition marker */}
+      <div className="mx-auto max-w-[1320px] px-6 pt-10 md:pt-14 flex items-center justify-between">
+        <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 600 }}>
+          ED. 001 — AO VIVO / TELEGRAM
+        </span>
+        <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 600 }}>
+          SÃO PAULO · BRASIL
+        </span>
+      </div>
+
+      <div className="mx-auto max-w-[1320px] px-6 pt-8 pb-20 md:pt-12 md:pb-32 grid grid-cols-12 gap-x-6 gap-y-10 items-end">
+        {/* Big number marker */}
+        <div className="col-span-12 md:col-span-1 order-1">
+          <p style={{ ...display, color: YELLOW, fontSize: "120px", lineHeight: 0.8, opacity: 0.9 }}>01</p>
+        </div>
+
+        {/* Headline block — overflows visually into image column */}
+        <div className="col-span-12 md:col-span-7 order-2 md:-mr-16 relative z-10">
           <span
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
             style={{ border: `1px solid ${YELLOW}`, color: YELLOW, ...body, fontSize: "11px", letterSpacing: "0.14em", fontWeight: 700 }}
@@ -116,10 +132,11 @@ function Hero() {
           </span>
 
           <h1
-            className="mt-6 text-[56px] sm:text-[72px] md:text-[92px] leading-[0.92]"
+            className="mt-6 text-[64px] sm:text-[88px] md:text-[124px] leading-[0.86]"
             style={{ ...display, color: TEXT, textTransform: "uppercase" }}
           >
-            OPERE{" "}
+            OPERE
+            <br />
             <span className="relative inline-block" style={{ color: YELLOW, fontStyle: "italic" }}>
               <span
                 aria-hidden
@@ -128,22 +145,14 @@ function Hero() {
               />
               <span className="relative" style={{ zIndex: 1 }}>AO VIVO</span>
             </span>{" "}
-            COMIGO TODOS OS DIAS.
+            <span style={{ color: TEXT }}>COMIGO</span>
+            <br />
+            <span style={{ color: MUTED, fontSize: "0.55em", letterSpacing: "-0.01em" }}>todos os dias.</span>
           </h1>
-
-          <p className="mt-6 text-base sm:text-lg max-w-[520px]" style={{ ...body, color: MUTED, lineHeight: 1.55 }}>
-            Sem gale. Sem proteção. Sem robô. Só eu, o gráfico e você assistindo entrada por entrada em tempo real.
-          </p>
-
-          <div className="mt-8">
-            <CtaButton>Entrar no Grupo Gratuito →</CtaButton>
-            <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "12px", letterSpacing: "0.06em" }}>
-              Acesso imediato · Vagas limitadas por sala
-            </p>
-          </div>
         </div>
 
-        <div className="relative w-full max-w-[460px] mx-auto md:ml-auto" style={{ aspectRatio: "4/5" }}>
+        {/* Image column — taller, no caption overlay */}
+        <div className="col-span-12 md:col-span-4 order-3 relative w-full" style={{ aspectRatio: "3/4" }}>
           <div
             className="absolute inset-0 overflow-hidden"
             style={{
@@ -157,20 +166,37 @@ function Hero() {
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
             />
+          </div>
+          {/* floating tag bottom-left of image */}
+          <div
+            className="absolute -bottom-4 -left-4 px-4 py-3"
+            style={{ background: YELLOW, border: "2px solid #000", boxShadow: "6px 6px 0 #000" }}
+          >
+            <p style={{ ...display, fontSize: "22px", color: "#000", lineHeight: 1 }}>{NOME_TRADER}</p>
+            <p style={{ ...body, color: "#000", fontSize: "10px", letterSpacing: "0.14em", fontWeight: 700, marginTop: 2 }}>
+              TRADER · 6 ANOS
+            </p>
+          </div>
+        </div>
 
-            <div
-              className="absolute left-0 right-0 bottom-0 px-5 py-4"
-              style={{
-                background: "rgba(0,0,0,0.55)",
-                backdropFilter: "blur(8px)",
-                borderLeft: `3px solid ${YELLOW}`,
-              }}
-            >
-              <p style={{ ...display, fontSize: "28px", color: TEXT, lineHeight: 1 }}>{NOME_TRADER}</p>
-              <p style={{ ...body, color: MUTED, fontSize: "12px", letterSpacing: "0.08em", marginTop: 4 }}>
-                Trader · 6 anos de mercado
-              </p>
-            </div>
+        {/* Bottom row: rule + paragraph + CTA, asymmetric */}
+        <div className="col-span-12 order-4 mt-6 md:mt-12 grid grid-cols-12 gap-6 items-end" style={{ borderTop: `1px solid ${LINE}`, paddingTop: 28 }}>
+          <div className="col-span-12 md:col-span-1">
+            <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>§ 01</p>
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <p style={{ ...body, color: TEXT, fontSize: "18px", lineHeight: 1.5, fontWeight: 500 }}>
+              Sem gale. Sem proteção. Sem robô.
+            </p>
+            <p className="mt-2" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.55 }}>
+              Só eu, o gráfico e você assistindo entrada por entrada em tempo real.
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:text-right">
+            <CtaButton>Entrar no Grupo Gratuito →</CtaButton>
+            <p className="mt-3" style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.08em" }}>
+              Acesso imediato · Vagas limitadas
+            </p>
           </div>
         </div>
       </div>
