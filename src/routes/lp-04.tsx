@@ -197,7 +197,7 @@ function HeroPhoto() {
         <img
           src={traderPhoto}
           alt={`${NOME_TRADER} durante live diária em sua sala de operações`}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
           style={{ filter: "grayscale(0.85) contrast(1.05)" }}
           loading="eager"
         />
