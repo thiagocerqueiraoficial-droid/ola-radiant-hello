@@ -87,7 +87,7 @@ function Hero() {
         style={{ ...serif, fontStyle: "italic", color: INK_SOFT, lineHeight: 1.5 }}
       >
         Não é mais um robô. Não é mais um guru vendendo print. É o que eu gostaria
-        que alguém tivesse me dito antes de eu queimar os primeiros R$ 8 mil.
+        que alguém tivesse me dito antes de eu queimar os primeiros R$ 50 mil.
       </p>
       <p
         className="mt-10 text-[10px] sm:text-[11px] uppercase tracking-[0.2em]"
@@ -209,7 +209,7 @@ function Body() {
       </ul>
 
       <p className="mt-6">
-        Eu sei disso porque eu também caí em cada uma. Os R$ 8 mil que perdi no começo
+        Eu sei disso porque eu também caí em cada uma. Os R$ 50 mil que perdi no começo
         não foram investimento em educação, foram investimento no ego de gente que
         estava ganhando dinheiro da minha ignorância. Quando eu aceitei isso, parei de
         procurar atalho e comecei a construir método.
