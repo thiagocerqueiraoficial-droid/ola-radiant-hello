@@ -102,11 +102,27 @@ function Hero() {
       className="relative w-full overflow-hidden"
       style={{
         background: BG,
-        backgroundImage: `radial-gradient(circle at 0% 0%, rgba(255,212,0,0.08), transparent 45%), radial-gradient(circle at 100% 100%, rgba(255,77,0,0.08), transparent 45%)`,
+        backgroundImage: `radial-gradient(circle at 0% 0%, rgba(255,212,0,0.10), transparent 50%), radial-gradient(circle at 100% 100%, rgba(255,77,0,0.08), transparent 45%)`,
       }}
     >
-      <div className="mx-auto max-w-[1200px] px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-        <div>
+      {/* Vertical edition marker */}
+      <div className="mx-auto max-w-[1320px] px-6 pt-10 md:pt-14 flex items-center justify-between">
+        <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 600 }}>
+          ED. 001 — AO VIVO / TELEGRAM
+        </span>
+        <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 600 }}>
+          SÃO PAULO · BRASIL
+        </span>
+      </div>
+
+      <div className="mx-auto max-w-[1320px] px-6 pt-8 pb-20 md:pt-12 md:pb-32 grid grid-cols-12 gap-x-6 gap-y-10 items-end">
+        {/* Big number marker */}
+        <div className="col-span-12 md:col-span-1 order-1">
+          <p style={{ ...display, color: YELLOW, fontSize: "120px", lineHeight: 0.8, opacity: 0.9 }}>01</p>
+        </div>
+
+        {/* Headline block — overflows visually into image column */}
+        <div className="col-span-12 md:col-span-7 order-2 md:-mr-16 relative z-10">
           <span
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
             style={{ border: `1px solid ${YELLOW}`, color: YELLOW, ...body, fontSize: "11px", letterSpacing: "0.14em", fontWeight: 700 }}
@@ -116,10 +132,11 @@ function Hero() {
           </span>
 
           <h1
-            className="mt-6 text-[56px] sm:text-[72px] md:text-[92px] leading-[0.92]"
+            className="mt-6 text-[64px] sm:text-[88px] md:text-[124px] leading-[0.86]"
             style={{ ...display, color: TEXT, textTransform: "uppercase" }}
           >
-            OPERE{" "}
+            OPERE
+            <br />
             <span className="relative inline-block" style={{ color: YELLOW, fontStyle: "italic" }}>
               <span
                 aria-hidden
@@ -128,22 +145,14 @@ function Hero() {
               />
               <span className="relative" style={{ zIndex: 1 }}>AO VIVO</span>
             </span>{" "}
-            COMIGO TODOS OS DIAS.
+            <span style={{ color: TEXT }}>COMIGO</span>
+            <br />
+            <span style={{ color: MUTED, fontSize: "0.55em", letterSpacing: "-0.01em" }}>todos os dias.</span>
           </h1>
-
-          <p className="mt-6 text-base sm:text-lg max-w-[520px]" style={{ ...body, color: MUTED, lineHeight: 1.55 }}>
-            Sem gale. Sem proteção. Sem robô. Só eu, o gráfico e você assistindo entrada por entrada em tempo real.
-          </p>
-
-          <div className="mt-8">
-            <CtaButton>Entrar no Grupo Gratuito →</CtaButton>
-            <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "12px", letterSpacing: "0.06em" }}>
-              Acesso imediato · Vagas limitadas por sala
-            </p>
-          </div>
         </div>
 
-        <div className="relative w-full max-w-[460px] mx-auto md:ml-auto" style={{ aspectRatio: "4/5" }}>
+        {/* Image column — taller, no caption overlay */}
+        <div className="col-span-12 md:col-span-4 order-3 relative w-full" style={{ aspectRatio: "3/4" }}>
           <div
             className="absolute inset-0 overflow-hidden"
             style={{
@@ -157,20 +166,37 @@ function Hero() {
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
             />
+          </div>
+          {/* floating tag bottom-left of image */}
+          <div
+            className="absolute -bottom-4 -left-4 px-4 py-3"
+            style={{ background: YELLOW, border: "2px solid #000", boxShadow: "6px 6px 0 #000" }}
+          >
+            <p style={{ ...display, fontSize: "22px", color: "#000", lineHeight: 1 }}>{NOME_TRADER}</p>
+            <p style={{ ...body, color: "#000", fontSize: "10px", letterSpacing: "0.14em", fontWeight: 700, marginTop: 2 }}>
+              TRADER · 6 ANOS
+            </p>
+          </div>
+        </div>
 
-            <div
-              className="absolute left-0 right-0 bottom-0 px-5 py-4"
-              style={{
-                background: "rgba(0,0,0,0.55)",
-                backdropFilter: "blur(8px)",
-                borderLeft: `3px solid ${YELLOW}`,
-              }}
-            >
-              <p style={{ ...display, fontSize: "28px", color: TEXT, lineHeight: 1 }}>{NOME_TRADER}</p>
-              <p style={{ ...body, color: MUTED, fontSize: "12px", letterSpacing: "0.08em", marginTop: 4 }}>
-                Trader · 6 anos de mercado
-              </p>
-            </div>
+        {/* Bottom row: rule + paragraph + CTA, asymmetric */}
+        <div className="col-span-12 order-4 mt-6 md:mt-12 grid grid-cols-12 gap-6 items-end" style={{ borderTop: `1px solid ${LINE}`, paddingTop: 28 }}>
+          <div className="col-span-12 md:col-span-1">
+            <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>§ 01</p>
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <p style={{ ...body, color: TEXT, fontSize: "18px", lineHeight: 1.5, fontWeight: 500 }}>
+              Sem gale. Sem proteção. Sem robô.
+            </p>
+            <p className="mt-2" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.55 }}>
+              Só eu, o gráfico e você assistindo entrada por entrada em tempo real.
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-5 md:text-right">
+            <CtaButton>Entrar no Grupo Gratuito →</CtaButton>
+            <p className="mt-3" style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.08em" }}>
+              Acesso imediato · Vagas limitadas
+            </p>
           </div>
         </div>
       </div>
@@ -180,22 +206,50 @@ function Hero() {
 
 function Stats() {
   const items = [
-    { n: "99%", l: "Acerto nas Lives" },
+    { n: "99%", l: "Acerto nas Lives", big: true },
     { n: "0", l: "Gale ou Proteção" },
     { n: "5x", l: "Lives na Semana" },
     { n: "12k+", l: "Alunos Ativos" },
   ];
   return (
     <section style={{ background: BG3, borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
-      <div className="mx-auto max-w-[1200px] px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
-        {items.map((s, i) => (
-          <div key={i} className="text-center md:text-left">
-            <p style={{ ...display, color: YELLOW, fontSize: "72px", lineHeight: 1 }}>{s.n}</p>
-            <p className="mt-2" style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 600 }}>
-              {s.l}
-            </p>
-          </div>
-        ))}
+      <div className="mx-auto max-w-[1320px] px-6 py-16 md:py-24">
+        <div className="flex items-baseline justify-between mb-12">
+          <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+            § 02 — NÚMEROS
+          </p>
+          <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em" }}>ATUALIZADO HOJE</span>
+        </div>
+        <div className="grid grid-cols-12 gap-x-6 gap-y-10 items-end">
+          {items.map((s, i) => {
+            const span = s.big ? "col-span-12 md:col-span-6" : "col-span-6 md:col-span-2";
+            return (
+              <div
+                key={i}
+                className={span}
+                style={i > 0 ? { borderLeft: `1px solid ${LINE}`, paddingLeft: 20 } : {}}
+              >
+                <p
+                  className={s.big ? "text-[110px] md:text-[180px]" : "text-[56px] md:text-[80px]"}
+                  style={{
+                    ...display,
+                    color: s.big ? YELLOW : TEXT,
+                    lineHeight: 0.85,
+                    fontStyle: s.big ? "italic" : "normal",
+                  }}
+                >
+                  {s.n}
+                </p>
+                <p
+                  className="mt-3"
+                  style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 600 }}
+                >
+                  {s.l}
+                </p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -204,42 +258,77 @@ function Stats() {
 function Benefits() {
   const items = [
     {
+      n: "I",
       t: "Lives diárias ao vivo",
       d: "Entro na sala, abro o gráfico e opero na sua frente. Você acompanha leitura, entrada e saída em tempo real.",
+      span: "col-span-12 md:col-span-7",
+      tall: true,
     },
     {
-      t: "Curso completo liberado",
-      d: "Do zero até operação avançada. Módulos de leitura de gráfico, gestão de risco, psicologia e método autoral.",
+      n: "II",
+      t: "Curso completo",
+      d: "Do zero ao avançado. Leitura de gráfico, gestão de risco, psicologia e método autoral.",
+      span: "col-span-12 md:col-span-5",
     },
     {
-      t: "Sala de sinais priorizada",
-      d: "Quem entra pelo grupo gratuito recebe avisos antes das operações começarem. Nada de chegar atrasado.",
+      n: "III",
+      t: "Sala priorizada",
+      d: "Quem entra pelo grupo gratuito recebe avisos antes das operações começarem.",
+      span: "col-span-12 md:col-span-5",
     },
     {
+      n: "IV",
       t: "Comunidade ativa",
       d: "Mais de 12 mil operadores trocando leitura, estratégia e call do dia. Ninguém opera sozinho aqui.",
+      span: "col-span-12 md:col-span-7",
+      tall: true,
     },
   ];
   return (
     <section style={{ background: BG }}>
-      <div className="mx-auto max-w-[1200px] px-6 py-20">
-        <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
-          O QUE VOCÊ RECEBE
-        </p>
-        <h2 className="mt-3 text-4xl sm:text-6xl" style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 1 }}>
-          TUDO QUE VOCÊ PRECISA PRA OPERAR HOJE.
-        </h2>
-        <div className="mt-12 grid md:grid-cols-2 gap-5">
+      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-6 items-end mb-16">
+          <div className="col-span-12 md:col-span-3">
+            <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+              § 03 — O QUE VOCÊ RECEBE
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-9">
+            <h2
+              className="text-[44px] sm:text-[72px] md:text-[104px]"
+              style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 0.88 }}
+            >
+              Tudo que você <span style={{ color: YELLOW, fontStyle: "italic" }}>precisa</span> pra operar hoje.
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-5">
           {items.map((it, i) => (
             <div
               key={i}
-              className="p-7 transition-colors duration-200 group"
-              style={{ background: BG2, borderLeft: `3px solid ${YELLOW}`, border: `1px solid ${LINE}`, borderLeftWidth: 3, borderLeftColor: YELLOW }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = ORANGE)}
-              onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = YELLOW)}
+              className={`${it.span} p-7 md:p-10 transition-colors duration-200`}
+              style={{
+                background: BG2,
+                border: `1px solid ${LINE}`,
+                borderTop: `2px solid ${YELLOW}`,
+                minHeight: it.tall ? 280 : 220,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderTopColor = ORANGE)}
+              onMouseLeave={(e) => (e.currentTarget.style.borderTopColor = YELLOW)}
             >
-              <h3 style={{ ...display, color: TEXT, fontSize: "28px", textTransform: "uppercase", lineHeight: 1.05 }}>{it.t}</h3>
-              <p className="mt-3" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.55 }}>{it.d}</p>
+              <div className="flex items-baseline justify-between mb-6">
+                <span style={{ ...display, color: YELLOW, fontSize: "32px", lineHeight: 1, fontStyle: "italic" }}>{it.n}</span>
+                <span style={{ ...body, color: MUTED, fontSize: "10px", letterSpacing: "0.2em", fontWeight: 700 }}>
+                  / 04
+                </span>
+              </div>
+              <h3 style={{ ...display, color: TEXT, fontSize: it.tall ? "44px" : "32px", textTransform: "uppercase", lineHeight: 0.95 }}>
+                {it.t}
+              </h3>
+              <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.6, maxWidth: 480 }}>
+                {it.d}
+              </p>
             </div>
           ))}
         </div>
@@ -250,27 +339,49 @@ function Benefits() {
 
 function Authority() {
   return (
-    <section style={{ background: BG3 }}>
-      <div className="mx-auto max-w-[1200px] px-6 py-20 grid md:grid-cols-3 gap-10 items-center">
-        <div
-          className="aspect-square overflow-hidden"
-          style={{ background: "linear-gradient(135deg,#1a1a1a,#070707)", border: `1px solid ${LINE}` }}
-        >
-          <img src={traderPhoto2} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
-        </div>
-        <div className="md:col-span-2">
-          <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
-            QUEM OPERA COM VOCÊ
+    <section style={{ background: BG3, borderTop: `1px solid ${LINE}` }}>
+      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32 grid grid-cols-12 gap-x-6 gap-y-12">
+        {/* Left column: section marker + huge name */}
+        <div className="col-span-12 md:col-span-7 md:pt-8">
+          <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+            § 04 — QUEM OPERA COM VOCÊ
           </p>
-          <h2 className="mt-3 text-5xl sm:text-7xl" style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 1 }}>
-            {NOME_TRADER}.
+          <h2
+            className="mt-6 text-[72px] sm:text-[120px] md:text-[180px]"
+            style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 0.82, fontStyle: "italic" }}
+          >
+            {NOME_TRADER}
           </h2>
-          <p className="mt-6" style={{ ...body, color: TEXT, fontSize: "17px", lineHeight: 1.6 }}>
-            Sou trader há mais de 6 anos. Passei pelo mercado de sinal pago, de robô que prometia o mundo, e de gente que sumia quando o gráfico virava contra.
-          </p>
-          <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "17px", lineHeight: 1.6 }}>
-            Resolvi fazer diferente. Abro a tela, opero ao vivo todos os dias, e você vê tudo. Os acertos, os erros, a gestão. Se funciona, funciona na sua frente.
-          </p>
+          <div
+            className="mt-8 grid grid-cols-12 gap-x-6"
+            style={{ borderTop: `1px solid ${LINE}`, paddingTop: 24 }}
+          >
+            <div className="col-span-12 md:col-span-1">
+              <p style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.2em", fontWeight: 700 }}>BIO</p>
+            </div>
+            <div className="col-span-12 md:col-span-11 max-w-[560px]">
+              <p style={{ ...body, color: TEXT, fontSize: "18px", lineHeight: 1.55, fontWeight: 500 }}>
+                Sou trader há mais de 6 anos. Passei pelo mercado de sinal pago, de robô que prometia o mundo, e de gente que sumia quando o gráfico virava contra.
+              </p>
+              <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "16px", lineHeight: 1.6 }}>
+                Resolvi fazer diferente. Abro a tela, opero ao vivo todos os dias, e você vê tudo. Os acertos, os erros, a gestão. Se funciona, funciona na sua frente.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right column: portrait, vertical, offset */}
+        <div className="col-span-12 md:col-span-5 md:-mt-8">
+          <div
+            className="relative w-full overflow-hidden"
+            style={{ aspectRatio: "4/5", background: "linear-gradient(135deg,#1a1a1a,#070707)", border: `1px solid ${LINE}` }}
+          >
+            <img src={traderPhoto2} alt={NOME_TRADER} className="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div className="mt-4 flex items-center justify-between" style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em" }}>
+            <span>FIG. 01 · {NOME_TRADER.toUpperCase()}</span>
+            <span>2026</span>
+          </div>
         </div>
       </div>
     </section>
@@ -338,34 +449,52 @@ function FAQ() {
     },
   ];
   return (
-    <section style={{ background: BG3 }}>
-      <div className="mx-auto max-w-[860px] px-6 py-20">
-        <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
-          PERGUNTAS FREQUENTES
-        </p>
-        <h2 className="mt-3 text-4xl sm:text-6xl" style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 1 }}>
-          DÚVIDAS COMUNS.
-        </h2>
-        <div className="mt-10">
+    <section style={{ background: BG3, borderTop: `1px solid ${LINE}` }}>
+      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32 grid grid-cols-12 gap-x-6 gap-y-10">
+        <div className="col-span-12 md:col-span-4 md:sticky md:top-12 md:self-start">
+          <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+            § 05 — FAQ
+          </p>
+          <h2
+            className="mt-6 text-[56px] sm:text-[80px] md:text-[88px]"
+            style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 0.88 }}
+          >
+            Dúvidas <br />
+            <span style={{ color: YELLOW, fontStyle: "italic" }}>comuns.</span>
+          </h2>
+          <p className="mt-6" style={{ ...body, color: MUTED, fontSize: "14px", lineHeight: 1.6, maxWidth: 280 }}>
+            Se ficar alguma dúvida depois, é só perguntar dentro do grupo.
+          </p>
+        </div>
+
+        <div className="col-span-12 md:col-span-8 md:col-start-5">
           {qs.map((it, i) => (
             <details
               key={i}
-              className="group py-5"
+              className="group py-6"
               style={{ borderTop: `1px solid ${LINE}`, ...(i === qs.length - 1 ? { borderBottom: `1px solid ${LINE}` } : {}) }}
             >
               <summary
-                className="flex justify-between items-center cursor-pointer list-none"
-                style={{ ...body, color: TEXT, fontSize: "18px", fontWeight: 600 }}
+                className="flex justify-between items-start cursor-pointer list-none gap-6"
+                style={{ ...body, color: TEXT, fontWeight: 600 }}
               >
-                <span>{it.q}</span>
+                <span className="flex items-baseline gap-4 flex-1">
+                  <span style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700, minWidth: 28 }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span style={{ fontSize: "20px", lineHeight: 1.3 }}>{it.q}</span>
+                </span>
                 <span
-                  className="ml-4 transition-transform duration-200 group-open:rotate-45"
-                  style={{ color: YELLOW, fontSize: "26px", lineHeight: 1, ...display }}
+                  className="transition-transform duration-200 group-open:rotate-45 shrink-0"
+                  style={{ color: YELLOW, fontSize: "32px", lineHeight: 1, ...display }}
                 >
                   +
                 </span>
               </summary>
-              <p className="mt-3" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.6 }}>
+              <p
+                className="mt-4 ml-0 md:ml-[44px]"
+                style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.65, maxWidth: 560 }}
+              >
                 {it.a}
               </p>
             </details>
