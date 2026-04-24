@@ -449,34 +449,52 @@ function FAQ() {
     },
   ];
   return (
-    <section style={{ background: BG3 }}>
-      <div className="mx-auto max-w-[860px] px-6 py-20">
-        <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
-          PERGUNTAS FREQUENTES
-        </p>
-        <h2 className="mt-3 text-4xl sm:text-6xl" style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 1 }}>
-          DÚVIDAS COMUNS.
-        </h2>
-        <div className="mt-10">
+    <section style={{ background: BG3, borderTop: `1px solid ${LINE}` }}>
+      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32 grid grid-cols-12 gap-x-6 gap-y-10">
+        <div className="col-span-12 md:col-span-4 md:sticky md:top-12 md:self-start">
+          <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+            § 05 — FAQ
+          </p>
+          <h2
+            className="mt-6 text-[56px] sm:text-[80px] md:text-[88px]"
+            style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 0.88 }}
+          >
+            Dúvidas <br />
+            <span style={{ color: YELLOW, fontStyle: "italic" }}>comuns.</span>
+          </h2>
+          <p className="mt-6" style={{ ...body, color: MUTED, fontSize: "14px", lineHeight: 1.6, maxWidth: 280 }}>
+            Se ficar alguma dúvida depois, é só perguntar dentro do grupo.
+          </p>
+        </div>
+
+        <div className="col-span-12 md:col-span-8 md:col-start-5">
           {qs.map((it, i) => (
             <details
               key={i}
-              className="group py-5"
+              className="group py-6"
               style={{ borderTop: `1px solid ${LINE}`, ...(i === qs.length - 1 ? { borderBottom: `1px solid ${LINE}` } : {}) }}
             >
               <summary
-                className="flex justify-between items-center cursor-pointer list-none"
-                style={{ ...body, color: TEXT, fontSize: "18px", fontWeight: 600 }}
+                className="flex justify-between items-start cursor-pointer list-none gap-6"
+                style={{ ...body, color: TEXT, fontWeight: 600 }}
               >
-                <span>{it.q}</span>
+                <span className="flex items-baseline gap-4 flex-1">
+                  <span style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700, minWidth: 28 }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span style={{ fontSize: "20px", lineHeight: 1.3 }}>{it.q}</span>
+                </span>
                 <span
-                  className="ml-4 transition-transform duration-200 group-open:rotate-45"
-                  style={{ color: YELLOW, fontSize: "26px", lineHeight: 1, ...display }}
+                  className="transition-transform duration-200 group-open:rotate-45 shrink-0"
+                  style={{ color: YELLOW, fontSize: "32px", lineHeight: 1, ...display }}
                 >
                   +
                 </span>
               </summary>
-              <p className="mt-3" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.6 }}>
+              <p
+                className="mt-4 ml-0 md:ml-[44px]"
+                style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.65, maxWidth: 560 }}
+              >
                 {it.a}
               </p>
             </details>
