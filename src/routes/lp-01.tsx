@@ -258,42 +258,77 @@ function Stats() {
 function Benefits() {
   const items = [
     {
+      n: "I",
       t: "Lives diárias ao vivo",
       d: "Entro na sala, abro o gráfico e opero na sua frente. Você acompanha leitura, entrada e saída em tempo real.",
+      span: "col-span-12 md:col-span-7",
+      tall: true,
     },
     {
-      t: "Curso completo liberado",
-      d: "Do zero até operação avançada. Módulos de leitura de gráfico, gestão de risco, psicologia e método autoral.",
+      n: "II",
+      t: "Curso completo",
+      d: "Do zero ao avançado. Leitura de gráfico, gestão de risco, psicologia e método autoral.",
+      span: "col-span-12 md:col-span-5",
     },
     {
-      t: "Sala de sinais priorizada",
-      d: "Quem entra pelo grupo gratuito recebe avisos antes das operações começarem. Nada de chegar atrasado.",
+      n: "III",
+      t: "Sala priorizada",
+      d: "Quem entra pelo grupo gratuito recebe avisos antes das operações começarem.",
+      span: "col-span-12 md:col-span-5",
     },
     {
+      n: "IV",
       t: "Comunidade ativa",
       d: "Mais de 12 mil operadores trocando leitura, estratégia e call do dia. Ninguém opera sozinho aqui.",
+      span: "col-span-12 md:col-span-7",
+      tall: true,
     },
   ];
   return (
     <section style={{ background: BG }}>
-      <div className="mx-auto max-w-[1200px] px-6 py-20">
-        <p style={{ ...body, color: YELLOW, fontSize: "12px", letterSpacing: "0.18em", fontWeight: 700 }}>
-          O QUE VOCÊ RECEBE
-        </p>
-        <h2 className="mt-3 text-4xl sm:text-6xl" style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 1 }}>
-          TUDO QUE VOCÊ PRECISA PRA OPERAR HOJE.
-        </h2>
-        <div className="mt-12 grid md:grid-cols-2 gap-5">
+      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-6 items-end mb-16">
+          <div className="col-span-12 md:col-span-3">
+            <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
+              § 03 — O QUE VOCÊ RECEBE
+            </p>
+          </div>
+          <div className="col-span-12 md:col-span-9">
+            <h2
+              className="text-[44px] sm:text-[72px] md:text-[104px]"
+              style={{ ...display, color: TEXT, textTransform: "uppercase", lineHeight: 0.88 }}
+            >
+              Tudo que você <span style={{ color: YELLOW, fontStyle: "italic" }}>precisa</span> pra operar hoje.
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-5">
           {items.map((it, i) => (
             <div
               key={i}
-              className="p-7 transition-colors duration-200 group"
-              style={{ background: BG2, borderLeft: `3px solid ${YELLOW}`, border: `1px solid ${LINE}`, borderLeftWidth: 3, borderLeftColor: YELLOW }}
-              onMouseEnter={(e) => (e.currentTarget.style.borderLeftColor = ORANGE)}
-              onMouseLeave={(e) => (e.currentTarget.style.borderLeftColor = YELLOW)}
+              className={`${it.span} p-7 md:p-10 transition-colors duration-200`}
+              style={{
+                background: BG2,
+                border: `1px solid ${LINE}`,
+                borderTop: `2px solid ${YELLOW}`,
+                minHeight: it.tall ? 280 : 220,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderTopColor = ORANGE)}
+              onMouseLeave={(e) => (e.currentTarget.style.borderTopColor = YELLOW)}
             >
-              <h3 style={{ ...display, color: TEXT, fontSize: "28px", textTransform: "uppercase", lineHeight: 1.05 }}>{it.t}</h3>
-              <p className="mt-3" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.55 }}>{it.d}</p>
+              <div className="flex items-baseline justify-between mb-6">
+                <span style={{ ...display, color: YELLOW, fontSize: "32px", lineHeight: 1, fontStyle: "italic" }}>{it.n}</span>
+                <span style={{ ...body, color: MUTED, fontSize: "10px", letterSpacing: "0.2em", fontWeight: 700 }}>
+                  / 04
+                </span>
+              </div>
+              <h3 style={{ ...display, color: TEXT, fontSize: it.tall ? "44px" : "32px", textTransform: "uppercase", lineHeight: 0.95 }}>
+                {it.t}
+              </h3>
+              <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.6, maxWidth: 480 }}>
+                {it.d}
+              </p>
             </div>
           ))}
         </div>
