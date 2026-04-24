@@ -11,7 +11,7 @@ export const Route = createFileRoute("/lp-04")({
       {
         name: "description",
         content:
-          "Reportagem: De Lucca criou uma comunidade de 12 mil operadores com modelo de sala aberta e operações verificáveis em tempo real.",
+          "Reportagem: De Lucca criou uma comunidade de 16 mil operadores com modelo de sala aberta e operações verificáveis em tempo real.",
       },
       { property: "og:title", content: "Trader brasileiro acerta 99% das operações ao vivo · Mercado em Foco" },
       {
@@ -137,7 +137,7 @@ function Dek() {
       className="mx-auto max-w-[760px] mt-6"
       style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 21, lineHeight: 1.45 }}
     >
-      Com um modelo de sala aberta e resultados públicos, {NOME_TRADER} criou uma comunidade de 12 mil operadores que já provocou reação de quem trabalha com sinais pagos e robôs de operação.
+      Com um modelo de sala aberta e resultados públicos, {NOME_TRADER} criou uma comunidade de 16 mil operadores que já provocou reação de quem trabalha com sinais pagos e robôs de operação.
     </p>
   );
 }
@@ -384,7 +384,7 @@ function Body() {
         O contexto ajuda a explicar o crescimento. O mercado de sinais e metodologias de trading no Brasil movimenta cifras estimadas em centenas de milhões de reais por ano, com proliferação de gurus, robôs automatizados e cursos gravados que raramente cumprem a performance prometida. Em meio a esse cenário, propostas baseadas em transparência operacional começam a ganhar tração.
       </P>
       <P>
-        Segundo dados fornecidos pela Alpha Academy, a comunidade no Telegram reúne cerca de 12 mil operadores ativos, sendo que aproximadamente 40% são novos a cada trimestre. O crescimento foi feito sem investimento em publicidade paga até o início de 2025.
+        Segundo dados fornecidos pela Alpha Academy, a comunidade no Telegram reúne cerca de 16 mil operadores ativos, sendo que aproximadamente 40% são novos a cada trimestre. O crescimento foi feito sem investimento em publicidade paga até o início de 2025.
       </P>
 
       <PullQuote />
