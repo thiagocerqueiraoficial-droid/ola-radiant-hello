@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import traderPhoto from "@/assets/trader-delucca.png";
+import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-04")({
   component: LP04News,
@@ -147,13 +148,17 @@ function Byline() {
       className="mx-auto max-w-[760px] mt-8 pb-6 flex items-center gap-4"
       style={{ borderBottom: `1px solid ${RULE}` }}
     >
-      <div
-        aria-hidden
+      <img
+        src={renanPhoto}
+        alt="Renan Sampaio"
+        width={44}
+        height={44}
+        loading="lazy"
         style={{
           width: 44,
           height: 44,
           borderRadius: 999,
-          background: `linear-gradient(135deg, #d6d2c2, #b8b3a0)`,
+          objectFit: "cover",
           flexShrink: 0,
           border: `1px solid ${RULE}`,
         }}
