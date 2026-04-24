@@ -9,11 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Lp04RouteImport } from './routes/lp-04'
 import { Route as Lp03RouteImport } from './routes/lp-03'
 import { Route as Lp02RouteImport } from './routes/lp-02'
 import { Route as Lp01RouteImport } from './routes/lp-01'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Lp04Route = Lp04RouteImport.update({
+  id: '/lp-04',
+  path: '/lp-04',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Lp03Route = Lp03RouteImport.update({
   id: '/lp-03',
   path: '/lp-03',
@@ -40,12 +46,14 @@ export interface FileRoutesByFullPath {
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
+  '/lp-04': typeof Lp04Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
+  '/lp-04': typeof Lp04Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,14 @@ export interface FileRoutesById {
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
+  '/lp-04': typeof Lp04Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lp-01' | '/lp-02' | '/lp-03'
+  fullPaths: '/' | '/lp-01' | '/lp-02' | '/lp-03' | '/lp-04'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lp-01' | '/lp-02' | '/lp-03'
-  id: '__root__' | '/' | '/lp-01' | '/lp-02' | '/lp-03'
+  to: '/' | '/lp-01' | '/lp-02' | '/lp-03' | '/lp-04'
+  id: '__root__' | '/' | '/lp-01' | '/lp-02' | '/lp-03' | '/lp-04'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,10 +76,18 @@ export interface RootRouteChildren {
   Lp01Route: typeof Lp01Route
   Lp02Route: typeof Lp02Route
   Lp03Route: typeof Lp03Route
+  Lp04Route: typeof Lp04Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/lp-04': {
+      id: '/lp-04'
+      path: '/lp-04'
+      fullPath: '/lp-04'
+      preLoaderRoute: typeof Lp04RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lp-03': {
       id: '/lp-03'
       path: '/lp-03'
@@ -107,6 +124,7 @@ const rootRouteChildren: RootRouteChildren = {
   Lp01Route: Lp01Route,
   Lp02Route: Lp02Route,
   Lp03Route: Lp03Route,
+  Lp04Route: Lp04Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
