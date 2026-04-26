@@ -86,7 +86,7 @@ function AlertBar() {
 
 function Heading() {
   return (
-    <section className="text-center px-6" style={{ paddingTop: 48, paddingBottom: 32 }}>
+    <section className="text-center px-6" style={{ paddingTop: 36, paddingBottom: 24 }}>
       <span
         className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
         style={{
@@ -102,16 +102,16 @@ function Heading() {
         Vídeo abaixo · 4 minutos
       </span>
       <h1
-        className="mx-auto mt-6 text-[40px] sm:text-[48px] md:text-[54px] leading-[0.95]"
-        style={{ ...display, color: TEXT, textTransform: "uppercase", maxWidth: 820 }}
+        className="mx-auto mt-5 text-[36px] sm:text-[46px] md:text-[58px] leading-[0.92]"
+        style={{ ...display, color: TEXT, textTransform: "uppercase", maxWidth: 720 }}
       >
         Como eu acerto <span style={{ color: GREEN, fontStyle: "italic" }}>99%</span>
         <br />
         das operações ao vivo.
       </h1>
       <p
-        className="mx-auto mt-6"
-        style={{ ...body, color: MUTED, fontSize: 17, lineHeight: 1.55, maxWidth: 620 }}
+        className="mx-auto mt-5"
+        style={{ ...body, color: MUTED, fontSize: 16, lineHeight: 1.5, maxWidth: 560 }}
       >
         Sem gale. Sem proteção. Sem robô. O método que eu uso todos os dias, explicado em 4 minutos.
       </p>
@@ -124,8 +124,8 @@ function Player({ onPlay, started }: { onPlay: () => void; started: boolean }) {
     <div
       className="relative mx-auto overflow-hidden"
       style={{
-        maxWidth: 880,
-        aspectRatio: "16/9",
+        width: "min(100% - 32px, 540px)",
+        aspectRatio: "4/5",
         border: `1px solid ${LINE}`,
         borderRadius: 8,
         boxShadow: `0 30px 80px rgba(0,0,0,0.5), inset 0 0 0 1px ${LINE}`,
@@ -143,7 +143,7 @@ function Player({ onPlay, started }: { onPlay: () => void; started: boolean }) {
             src={traderPhoto}
             alt={`${NOME_TRADER} · poster`}
             className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: 0.75 }}
+            style={{ opacity: 0.75, objectPosition: "center top" }}
           />
           <div
             aria-hidden
