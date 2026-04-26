@@ -17,7 +17,7 @@ export const Route = createFileRoute("/lp-04")({
       {
         property: "og:description",
         content:
-          "Sala aberta, operações públicas, sem gale ou robô. O modelo que tem chamado atenção fora do mercado digital.",
+          "Sala aberta, operações públicas, sem gale ou robô. O modelo que tem chamado atenção fora do mercado financeiro.",
       },
     ],
   }),
@@ -106,7 +106,7 @@ function Headline() {
       style={{ ...display, color: INK, lineHeight: 1.05, fontWeight: 800, letterSpacing: "-0.015em" }}
     >
       Trader brasileiro acerta <span style={{ fontWeight: 900 }}>99%</span> das operações{" "}
-      <span style={{ fontWeight: 700, fontStyle: "italic" }}>ao vivo</span> e começa a chamar atenção fora do mercado digital
+      <span style={{ fontWeight: 700, fontStyle: "italic" }}>ao vivo</span> e começa a chamar atenção fora do mercado financeiro
     </h1>
   );
 }
