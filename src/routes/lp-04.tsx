@@ -33,7 +33,6 @@ const INK_SOFT = "#55554f";
 const ACCENT = "#0f3b2e";
 const ALERT = "#c1272d";
 const RULE = "#d8d3c4";
-const SPONSOR_BG = "#fff6cc";
 
 const display = { fontFamily: "'Playfair Display', Georgia, serif" };
 const serif = { fontFamily: "'Source Serif 4', 'Source Serif Pro', Georgia, serif" };
@@ -95,26 +94,6 @@ function SectionNav() {
         Economia <span style={{ opacity: 0.5 }}>›</span> Mercado de Capitais{" "}
         <span style={{ opacity: 0.5 }}>›</span> Investidores
       </div>
-    </div>
-  );
-}
-
-function SponsorTag() {
-  return (
-    <div
-      className="mx-auto max-w-[760px] mt-8 px-3 py-2 inline-flex items-center"
-      style={{
-        background: SPONSOR_BG,
-        color: INK,
-        ...meta,
-        fontSize: 11,
-        fontWeight: 600,
-        letterSpacing: "0.08em",
-        textTransform: "uppercase",
-        borderLeft: `3px solid #b89a00`,
-      }}
-    >
-      Conteúdo patrocinado · Este artigo é promovido por Alpha Academy
     </div>
   );
 }
