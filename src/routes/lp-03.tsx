@@ -331,32 +331,13 @@ function QuestionScreen({
         })}
       </div>
 
-      <div className="mt-10 flex items-center justify-between">
+      <div className="mt-8 flex items-center justify-start">
         <button
           type="button"
           onClick={onBack}
-          style={{ ...body, color: MUTED, fontSize: 14, fontWeight: 500, background: "transparent", border: 0, cursor: "pointer" }}
+          style={{ ...body, color: MUTED, fontSize: 14, fontWeight: 600, background: "transparent", border: 0, cursor: "pointer" }}
         >
           ← Voltar
-        </button>
-        <button
-          type="button"
-          onClick={onNext}
-          disabled={selected === null}
-          style={{
-            ...body,
-            background: LIME,
-            color: "#000",
-            fontWeight: 700,
-            padding: "14px 26px",
-            borderRadius: 999,
-            fontSize: 15,
-            opacity: selected === null ? 0.3 : 1,
-            cursor: selected === null ? "not-allowed" : "pointer",
-            transition: "opacity 200ms ease",
-          }}
-        >
-          Próxima →
         </button>
       </div>
     </section>
