@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import traderPhoto from "@/assets/trader-delucca.png";
+import traderPhoto from "@/assets/trader-delucca-live.png";
 import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-04")({
