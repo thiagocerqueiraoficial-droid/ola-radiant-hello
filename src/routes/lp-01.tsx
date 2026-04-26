@@ -313,15 +313,18 @@ function Benefits() {
               onMouseEnter={(e) => (e.currentTarget.style.borderTopColor = ORANGE)}
               onMouseLeave={(e) => (e.currentTarget.style.borderTopColor = YELLOW)}
             >
-              <div className="flex items-baseline justify-between mb-6">
-                <span style={{ ...display, color: YELLOW, fontSize: "32px", lineHeight: 1, fontStyle: "italic" }}>{it.n}</span>
-                <span style={{ ...body, color: MUTED, fontSize: "10px", letterSpacing: "0.2em", fontWeight: 700 }}>
+              <div className="mb-4 flex items-start justify-between gap-4">
+                <h3
+                  className="flex items-baseline gap-3"
+                  style={{ ...display, color: TEXT, fontSize: it.tall ? "44px" : "32px", textTransform: "uppercase", lineHeight: 0.95 }}
+                >
+                  <span style={{ color: YELLOW, fontSize: "0.72em", lineHeight: 1, fontStyle: "italic", flexShrink: 0 }}>{it.n}</span>
+                  <span>{it.t}</span>
+                </h3>
+                <span style={{ ...body, color: MUTED, fontSize: "10px", letterSpacing: "0.2em", fontWeight: 700, flexShrink: 0 }}>
                   / 04
                 </span>
               </div>
-              <h3 style={{ ...display, color: TEXT, fontSize: it.tall ? "44px" : "32px", textTransform: "uppercase", lineHeight: 0.95 }}>
-                {it.t}
-              </h3>
               <p className="mt-4" style={{ ...body, color: MUTED, fontSize: "15px", lineHeight: 1.6, maxWidth: 480 }}>
                 {it.d}
               </p>
