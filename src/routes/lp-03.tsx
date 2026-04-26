@@ -254,14 +254,12 @@ function QuestionScreen({
   selected,
   onSelect,
   onBack,
-  onNext,
 }: {
   index: number;
   question: Question;
   selected: number | null;
   onSelect: (i: number) => void;
   onBack: () => void;
-  onNext: () => void;
 }) {
   return (
     <section
