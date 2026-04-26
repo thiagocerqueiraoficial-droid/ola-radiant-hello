@@ -198,7 +198,7 @@ function Intro({ onStart }: { onStart: () => void }) {
               zIndex: 0,
             }}
           />
-          <span style={{ position: "relative", color: LIME, fontStyle: "italic", zIndex: 1 }}>
+          <span style={{ position: "relative", color: LIME, fontStyle: "italic", zIndex: 1, textShadow: `0 0 28px ${LIME}55` }}>
             perfil de operador
           </span>
         </span>{" "}
@@ -227,19 +227,19 @@ function Intro({ onStart }: { onStart: () => void }) {
         className="mt-10 inline-flex items-center gap-3 transition-transform hover:scale-[1.03]"
         style={{
           ...body,
-          background: LIME,
+          background: `linear-gradient(90deg, ${CYAN}, ${LIME})`,
           color: "#000",
           fontWeight: 700,
           padding: "16px 12px 16px 28px",
           borderRadius: 999,
           fontSize: 16,
-          boxShadow: `0 12px 30px ${LIME}33`,
+          boxShadow: `0 14px 42px ${CYAN}30, 0 0 0 1px ${LIME}88`,
         }}
       >
         Começar quiz
         <span
           className="flex items-center justify-center"
-          style={{ width: 36, height: 36, borderRadius: 999, background: "#000", color: LIME, fontSize: 16 }}
+          style={{ width: 36, height: 36, borderRadius: 999, background: "#000", color: CYAN, fontSize: 16 }}
         >
           →
         </span>
