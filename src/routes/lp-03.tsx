@@ -503,6 +503,7 @@ function LP03Quiz() {
   const [screen, setScreen] = useState<Screen>("intro");
   const [qIdx, setQIdx] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>(() => Array(QUESTIONS.length).fill(null));
+  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
@@ -513,6 +514,10 @@ function LP03Quiz() {
     const id = setTimeout(() => setScreen("result"), 2800);
     return () => clearTimeout(id);
   }, [screen]);
+
+  useEffect(() => () => {
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
+  }, []);
 
   const total = useMemo(
     () => answers.reduce<number>((acc, ai, i) => acc + (ai === null ? 0 : QUESTIONS[i].options[ai].weight), 0),
@@ -529,11 +534,20 @@ function LP03Quiz() {
           : Math.round(((qIdx + (answers[qIdx] !== null ? 1 : 0)) / QUESTIONS.length) * 100);
 
   const handleSelect = (i: number) => {
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
     setAnswers((prev) => {
       const next = [...prev];
       next[qIdx] = i;
       return next;
     });
+
+    advanceTimer.current = setTimeout(() => {
+      if (qIdx < QUESTIONS.length - 1) {
+        setQIdx((current) => Math.min(current + 1, QUESTIONS.length - 1));
+      } else {
+        setScreen("loading");
+      }
+    }, 220);
   };
 
   const handleNext = () => {
@@ -585,7 +599,6 @@ function LP03Quiz() {
             selected={answers[qIdx]}
             onSelect={handleSelect}
             onBack={handleBack}
-            onNext={handleNext}
           />
         )}
         {screen === "loading" && <Loading />}
