@@ -341,7 +341,7 @@ function FooterDisclosure() {
           className="mt-8 text-center"
           style={{ ...meta, color: INK_SOFT, fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase" }}
         >
-          Mercado em Foco © 2026 · Conteúdo patrocinado
+          Mercado em Foco © 2026
         </p>
       </div>
     </footer>
