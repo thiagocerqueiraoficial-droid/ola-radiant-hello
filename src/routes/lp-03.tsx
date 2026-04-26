@@ -271,7 +271,7 @@ function QuestionScreen({
     >
       <span
         className="inline-block px-3 py-1.5 rounded-full"
-        style={{ background: `${LIME}15`, color: LIME, ...body, fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${LIME}40` }}
+        style={{ background: `${CYAN}12`, color: CYAN, ...body, fontSize: 11, fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${CYAN}44`, boxShadow: `0 0 22px ${CYAN}18` }}
       >
         Pergunta {index + 1} de {QUESTIONS.length}
       </span>
@@ -292,18 +292,19 @@ function QuestionScreen({
               onClick={() => onSelect(i)}
               className="relative text-left transition-all duration-200 hover:translate-x-1"
               style={{
-                background: isSel ? `${LIME}14` : CARD,
-                border: `2px solid ${isSel ? LIME : LINE}`,
+                background: isSel ? `linear-gradient(135deg, ${CYAN}18, ${LIME}12)` : `linear-gradient(135deg, ${CARD}, #0b1020)`,
+                border: `1px solid ${isSel ? CYAN : LINE}`,
                 borderRadius: 12,
-                padding: "20px 22px 20px 62px",
+                padding: "18px 20px 18px 58px",
                 ...body,
                 color: TEXT,
                 fontSize: 16,
                 fontWeight: 500,
                 cursor: "pointer",
+                boxShadow: isSel ? `0 0 0 1px ${LIME}55, 0 14px 38px ${CYAN}18` : `inset 0 1px 0 rgba(255,255,255,0.04)`,
               }}
               onMouseEnter={(e) => {
-                if (!isSel) e.currentTarget.style.borderColor = LIME;
+                if (!isSel) e.currentTarget.style.borderColor = CYAN;
               }}
               onMouseLeave={(e) => {
                 if (!isSel) e.currentTarget.style.borderColor = LINE;
@@ -318,8 +319,9 @@ function QuestionScreen({
                   width: 20,
                   height: 20,
                   borderRadius: 999,
-                  border: `2px solid ${isSel ? LIME : "#4a4a5a"}`,
-                  background: isSel ? LIME : "transparent",
+                  border: `2px solid ${isSel ? LIME : "#4a6078"}`,
+                  background: isSel ? `radial-gradient(circle, ${LIME} 38%, ${CYAN})` : "transparent",
+                  boxShadow: isSel ? `0 0 18px ${LIME}88` : "none",
                   transition: "all 200ms ease",
                 }}
               />
