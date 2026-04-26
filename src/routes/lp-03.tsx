@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export const Route = createFileRoute("/lp-03")({
   component: LP03Quiz,
@@ -21,13 +21,15 @@ export const Route = createFileRoute("/lp-03")({
 
 const LINK_TELEGRAM = "{{LINK_TELEGRAM}}";
 
-const BG = "#0c0c14";
-const BG2 = "#16161f";
-const CARD = "#1c1c28";
-const TEXT = "#f5f5f0";
-const MUTED = "#8686a0";
-const LIME = "#d4ff3a";
-const PURPLE = "#5b3fff";
+const BG = "#05070d";
+const BG2 = "#0d1320";
+const CARD = "#111827";
+const TEXT = "#f7fbff";
+const MUTED = "#8f9bb3";
+const LIME = "#b7ff37";
+const PURPLE = "#6d5cff";
+const CYAN = "#22d3ee";
+const HOT = "#ff4fd8";
 const LINE = "rgba(255,255,255,0.08)";
 
 const display = { fontFamily: "'Syne', system-ui, sans-serif", letterSpacing: "-0.01em" };
