@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import traderPhoto from "@/assets/trader-delucca.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -90,31 +89,6 @@ function Hero() {
         Não é mais um robô. Não é mais um guru vendendo print. É o que eu gostaria
         que alguém tivesse me dito antes de eu queimar os primeiros R$ 50 mil.
       </p>
-      <figure className="mt-12 mx-auto max-w-[460px]">
-        <div
-          className="relative overflow-hidden"
-          style={{
-            aspectRatio: "4/5",
-            background: "#0a0a0a",
-            border: `1px solid ${RULE}`,
-            boxShadow: "0 2px 0 rgba(0,0,0,0.04), 0 18px 40px -20px rgba(0,0,0,0.35)",
-            filter: "grayscale(0.15) contrast(1.02)",
-          }}
-        >
-          <img
-            src={traderPhoto}
-            alt={`${NOME_TRADER}, trader da Alpha Academy`}
-            className="w-full h-full object-cover"
-            loading="eager"
-          />
-        </div>
-        <figcaption
-          className="mt-3 text-center"
-          style={{ ...mono, fontSize: "11px", letterSpacing: "0.2em", color: INK_SOFT, textTransform: "uppercase" }}
-        >
-          {NOME_TRADER} · Trader · 2026
-        </figcaption>
-      </figure>
     </section>
   );
 }
