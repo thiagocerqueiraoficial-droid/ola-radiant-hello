@@ -39,8 +39,9 @@ const serif = { fontFamily: "'Source Serif 4', 'Source Serif Pro', Georgia, seri
 const meta = { fontFamily: "'Inter', system-ui, sans-serif" };
 
 function useNowString() {
-  const [now, setNow] = useState<string>(() => formatNow(new Date()));
+  const [now, setNow] = useState<string>("");
   useEffect(() => {
+    setNow(formatNow(new Date()));
     const id = setInterval(() => setNow(formatNow(new Date())), 60_000);
     return () => clearInterval(id);
   }, []);
