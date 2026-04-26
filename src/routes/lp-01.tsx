@@ -564,17 +564,15 @@ function FloatingCta() {
     if (!finalCta) return;
 
     const onScroll = () => {
-      // show after scrolling past first viewport
       const scrolled = window.scrollY > window.innerHeight * 0.6;
-      setVisible(scrolled);
+      const finalRect = finalCta.getBoundingClientRect();
+      const reachedFinalCta = finalRect.top <= window.innerHeight - 96;
+      setVisible(scrolled && !reachedFinalCta);
     };
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(false);
-        else onScroll();
-      },
-      { threshold: 0.1 }
+      () => onScroll(),
+      { threshold: 0, rootMargin: "0px 0px -96px 0px" }
     );
     observer.observe(finalCta);
 
