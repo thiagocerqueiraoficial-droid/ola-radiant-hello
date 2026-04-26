@@ -282,8 +282,8 @@ function Benefits() {
   ];
   return (
     <section style={{ background: BG }}>
-      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32">
-        <div className="grid grid-cols-12 gap-x-6 gap-y-6 items-end mb-16">
+      <div className="mx-auto max-w-[1320px] px-6 py-12 md:py-32">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-6 items-end mb-10 md:mb-16">
           <div className="col-span-12 md:col-span-3">
             <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
               § 03 — O QUE VOCÊ RECEBE
@@ -336,7 +336,7 @@ function Benefits() {
 function Authority() {
   return (
     <section style={{ background: BG3, borderTop: `1px solid ${LINE}` }}>
-      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32 grid grid-cols-12 gap-x-6 gap-y-12">
+      <div className="mx-auto max-w-[1320px] px-6 py-12 md:py-32 grid grid-cols-12 gap-x-6 gap-y-10 md:gap-y-12">
         {/* Left column: section marker + huge name */}
         <div className="col-span-12 md:col-span-7 md:pt-8">
           <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
@@ -446,7 +446,7 @@ function FAQ() {
   ];
   return (
     <section style={{ background: BG3, borderTop: `1px solid ${LINE}` }}>
-      <div className="mx-auto max-w-[1320px] px-6 py-24 md:py-32 grid grid-cols-12 gap-x-6 gap-y-10">
+      <div className="mx-auto max-w-[1320px] px-6 py-12 md:py-32 grid grid-cols-12 gap-x-6 gap-y-10">
         <div className="col-span-12 md:col-span-4 md:sticky md:top-12 md:self-start">
           <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
             § 05 — FAQ
@@ -564,17 +564,15 @@ function FloatingCta() {
     if (!finalCta) return;
 
     const onScroll = () => {
-      // show after scrolling past first viewport
       const scrolled = window.scrollY > window.innerHeight * 0.6;
-      setVisible(scrolled);
+      const finalRect = finalCta.getBoundingClientRect();
+      const reachedFinalCta = finalRect.top <= window.innerHeight - 96;
+      setVisible(scrolled && !reachedFinalCta);
     };
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(false);
-        else onScroll();
-      },
-      { threshold: 0.1 }
+      () => onScroll(),
+      { threshold: 0, rootMargin: "0px 0px -96px 0px" }
     );
     observer.observe(finalCta);
 
