@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export const Route = createFileRoute("/lp-03")({
   component: LP03Quiz,
@@ -21,13 +21,15 @@ export const Route = createFileRoute("/lp-03")({
 
 const LINK_TELEGRAM = "{{LINK_TELEGRAM}}";
 
-const BG = "#0c0c14";
-const BG2 = "#16161f";
-const CARD = "#1c1c28";
-const TEXT = "#f5f5f0";
-const MUTED = "#8686a0";
-const LIME = "#d4ff3a";
-const PURPLE = "#5b3fff";
+const BG = "#05070d";
+const BG2 = "#0d1320";
+const CARD = "#111827";
+const TEXT = "#f7fbff";
+const MUTED = "#8f9bb3";
+const LIME = "#b7ff37";
+const PURPLE = "#6d5cff";
+const CYAN = "#22d3ee";
+const HOT = "#ff4fd8";
 const LINE = "rgba(255,255,255,0.08)";
 
 const display = { fontFamily: "'Syne', system-ui, sans-serif", letterSpacing: "-0.01em" };
@@ -136,14 +138,15 @@ function Header() {
     <header
       className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 py-4 flex items-center justify-between"
       style={{
-        background: "rgba(12,12,20,0.7)",
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
+        background: "rgba(5,7,13,0.74)",
+        backdropFilter: "blur(18px) saturate(160%)",
+        WebkitBackdropFilter: "blur(18px) saturate(160%)",
         borderBottom: `1px solid ${LINE}`,
+        boxShadow: `0 0 36px ${CYAN}12`,
       }}
     >
       <p style={{ ...display, fontWeight: 800, color: TEXT, fontSize: 18, letterSpacing: "-0.02em" }}>
-        ALPHA<span style={{ color: LIME }}>.</span>QUIZ
+        ALPHA<span style={{ color: CYAN }}>.</span><span style={{ color: LIME }}>QUIZ</span>
       </p>
       <p style={{ ...body, color: MUTED, fontSize: 12, fontWeight: 500 }}>
         5 perguntas · <span style={{ color: LIME, fontWeight: 700 }}>90 segundos</span>
@@ -162,8 +165,8 @@ function ProgressBar({ pct }: { pct: number }) {
         style={{
           height: "100%",
           width: `${pct}%`,
-          background: `linear-gradient(90deg, ${LIME}, ${PURPLE})`,
-          boxShadow: `0 0 12px ${LIME}80`,
+          background: `linear-gradient(90deg, ${CYAN}, ${LIME}, ${HOT})`,
+          boxShadow: `0 0 16px ${CYAN}80`,
           transition: "width 400ms ease",
         }}
       />
@@ -195,7 +198,7 @@ function Intro({ onStart }: { onStart: () => void }) {
               zIndex: 0,
             }}
           />
-          <span style={{ position: "relative", color: LIME, fontStyle: "italic", zIndex: 1 }}>
+          <span style={{ position: "relative", color: LIME, fontStyle: "italic", zIndex: 1, textShadow: `0 0 28px ${LIME}55` }}>
             perfil de operador
           </span>
         </span>{" "}
@@ -224,19 +227,19 @@ function Intro({ onStart }: { onStart: () => void }) {
         className="mt-10 inline-flex items-center gap-3 transition-transform hover:scale-[1.03]"
         style={{
           ...body,
-          background: LIME,
+          background: `linear-gradient(90deg, ${CYAN}, ${LIME})`,
           color: "#000",
           fontWeight: 700,
           padding: "16px 12px 16px 28px",
           borderRadius: 999,
           fontSize: 16,
-          boxShadow: `0 12px 30px ${LIME}33`,
+          boxShadow: `0 14px 42px ${CYAN}30, 0 0 0 1px ${LIME}88`,
         }}
       >
         Começar quiz
         <span
           className="flex items-center justify-center"
-          style={{ width: 36, height: 36, borderRadius: 999, background: "#000", color: LIME, fontSize: 16 }}
+          style={{ width: 36, height: 36, borderRadius: 999, background: "#000", color: CYAN, fontSize: 16 }}
         >
           →
         </span>
@@ -251,14 +254,12 @@ function QuestionScreen({
   selected,
   onSelect,
   onBack,
-  onNext,
 }: {
   index: number;
   question: Question;
   selected: number | null;
   onSelect: (i: number) => void;
   onBack: () => void;
-  onNext: () => void;
 }) {
   return (
     <section
@@ -268,7 +269,7 @@ function QuestionScreen({
     >
       <span
         className="inline-block px-3 py-1.5 rounded-full"
-        style={{ background: `${LIME}15`, color: LIME, ...body, fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${LIME}40` }}
+        style={{ background: `${CYAN}12`, color: CYAN, ...body, fontSize: 11, fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${CYAN}44`, boxShadow: `0 0 22px ${CYAN}18` }}
       >
         Pergunta {index + 1} de {QUESTIONS.length}
       </span>
@@ -289,18 +290,19 @@ function QuestionScreen({
               onClick={() => onSelect(i)}
               className="relative text-left transition-all duration-200 hover:translate-x-1"
               style={{
-                background: isSel ? `${LIME}14` : CARD,
-                border: `2px solid ${isSel ? LIME : LINE}`,
+                background: isSel ? `linear-gradient(135deg, ${CYAN}18, ${LIME}12)` : `linear-gradient(135deg, ${CARD}, #0b1020)`,
+                border: `1px solid ${isSel ? CYAN : LINE}`,
                 borderRadius: 12,
-                padding: "20px 22px 20px 62px",
+                padding: "18px 20px 18px 58px",
                 ...body,
                 color: TEXT,
                 fontSize: 16,
                 fontWeight: 500,
                 cursor: "pointer",
+                boxShadow: isSel ? `0 0 0 1px ${LIME}55, 0 14px 38px ${CYAN}18` : `inset 0 1px 0 rgba(255,255,255,0.04)`,
               }}
               onMouseEnter={(e) => {
-                if (!isSel) e.currentTarget.style.borderColor = LIME;
+                if (!isSel) e.currentTarget.style.borderColor = CYAN;
               }}
               onMouseLeave={(e) => {
                 if (!isSel) e.currentTarget.style.borderColor = LINE;
@@ -315,8 +317,9 @@ function QuestionScreen({
                   width: 20,
                   height: 20,
                   borderRadius: 999,
-                  border: `2px solid ${isSel ? LIME : "#4a4a5a"}`,
-                  background: isSel ? LIME : "transparent",
+                  border: `2px solid ${isSel ? LIME : "#4a6078"}`,
+                  background: isSel ? `radial-gradient(circle, ${LIME} 38%, ${CYAN})` : "transparent",
+                  boxShadow: isSel ? `0 0 18px ${LIME}88` : "none",
                   transition: "all 200ms ease",
                 }}
               />
@@ -326,32 +329,13 @@ function QuestionScreen({
         })}
       </div>
 
-      <div className="mt-10 flex items-center justify-between">
+      <div className="mt-8 flex items-center justify-start">
         <button
           type="button"
           onClick={onBack}
-          style={{ ...body, color: MUTED, fontSize: 14, fontWeight: 500, background: "transparent", border: 0, cursor: "pointer" }}
+          style={{ ...body, color: MUTED, fontSize: 14, fontWeight: 600, background: "transparent", border: 0, cursor: "pointer" }}
         >
           ← Voltar
-        </button>
-        <button
-          type="button"
-          onClick={onNext}
-          disabled={selected === null}
-          style={{
-            ...body,
-            background: LIME,
-            color: "#000",
-            fontWeight: 700,
-            padding: "14px 26px",
-            borderRadius: 999,
-            fontSize: 15,
-            opacity: selected === null ? 0.3 : 1,
-            cursor: selected === null ? "not-allowed" : "pointer",
-            transition: "opacity 200ms ease",
-          }}
-        >
-          Próxima →
         </button>
       </div>
     </section>
@@ -400,10 +384,11 @@ function Result({ total }: { total: number }) {
       <div
         className="relative overflow-hidden"
         style={{
-          background: CARD,
-          border: `1px solid ${LINE}`,
+          background: `linear-gradient(145deg, ${CARD}, #080d18 70%)`,
+          border: `1px solid ${CYAN}22`,
           borderRadius: 16,
           padding: "48px 40px",
+          boxShadow: `0 24px 80px rgba(0,0,0,0.34), 0 0 80px ${CYAN}10`,
         }}
       >
         <div
@@ -414,13 +399,13 @@ function Result({ total }: { total: number }) {
             right: -100,
             width: 320,
             height: 320,
-            background: `radial-gradient(circle, ${LIME}33, transparent 70%)`,
+             background: `radial-gradient(circle, ${CYAN}28, transparent 70%)`,
           }}
         />
         <div className="relative">
           <span
             className="inline-block px-3 py-1.5 rounded-full"
-            style={{ background: `${LIME}15`, color: LIME, ...body, fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${LIME}40` }}
+             style={{ background: `${CYAN}12`, color: CYAN, ...body, fontSize: 11, fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${CYAN}40` }}
           >
             Perfil identificado
           </span>
@@ -429,12 +414,12 @@ function Result({ total }: { total: number }) {
             style={{ ...display, fontWeight: 800, color: TEXT, lineHeight: 1.05 }}
           >
             Você é um{" "}
-            <span style={{ color: LIME, fontStyle: "italic" }}>{profile.name}</span>
+            <span style={{ color: LIME, fontStyle: "italic", textShadow: `0 0 24px ${LIME}55` }}>{profile.name}</span>
           </h2>
 
           <div
             className="inline-flex items-center gap-3 mt-6 px-5 py-3 rounded-full"
-            style={{ background: BG2, border: `1px solid ${LINE}` }}
+            style={{ background: BG2, border: `1px solid ${CYAN}22`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05)` }}
           >
             <span style={{ ...display, color: LIME, fontWeight: 800, fontSize: 28, lineHeight: 1 }}>
               {score}%
@@ -519,6 +504,7 @@ function LP03Quiz() {
   const [screen, setScreen] = useState<Screen>("intro");
   const [qIdx, setQIdx] = useState(0);
   const [answers, setAnswers] = useState<(number | null)[]>(() => Array(QUESTIONS.length).fill(null));
+  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
@@ -529,6 +515,10 @@ function LP03Quiz() {
     const id = setTimeout(() => setScreen("result"), 2800);
     return () => clearTimeout(id);
   }, [screen]);
+
+  useEffect(() => () => {
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
+  }, []);
 
   const total = useMemo(
     () => answers.reduce<number>((acc, ai, i) => acc + (ai === null ? 0 : QUESTIONS[i].options[ai].weight), 0),
@@ -545,11 +535,20 @@ function LP03Quiz() {
           : Math.round(((qIdx + (answers[qIdx] !== null ? 1 : 0)) / QUESTIONS.length) * 100);
 
   const handleSelect = (i: number) => {
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
     setAnswers((prev) => {
       const next = [...prev];
       next[qIdx] = i;
       return next;
     });
+
+    advanceTimer.current = setTimeout(() => {
+      if (qIdx < QUESTIONS.length - 1) {
+        setQIdx((current) => Math.min(current + 1, QUESTIONS.length - 1));
+      } else {
+        setScreen("loading");
+      }
+    }, 220);
   };
 
   const handleNext = () => {
@@ -577,16 +576,18 @@ function LP03Quiz() {
       <style>{`
         @keyframes lp03-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes lp03-spin { to { transform: rotate(360deg); } }
+        .lp03-grid-bg { background-image: linear-gradient(rgba(34,211,238,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.07) 1px, transparent 1px); background-size: 36px 36px; mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent); }
       `}</style>
+      <div aria-hidden className="lp03-grid-bg absolute inset-0 pointer-events-none opacity-70" />
       <div
         aria-hidden
         className="absolute pointer-events-none"
-        style={{ top: -200, left: -200, width: 600, height: 600, background: `radial-gradient(circle, ${PURPLE}22, transparent 70%)` }}
+        style={{ top: -200, left: -200, width: 600, height: 600, background: `radial-gradient(circle, ${PURPLE}24, transparent 70%)` }}
       />
       <div
         aria-hidden
         className="absolute pointer-events-none"
-        style={{ bottom: -200, right: -200, width: 600, height: 600, background: `radial-gradient(circle, ${LIME}11, transparent 70%)` }}
+        style={{ bottom: -200, right: -200, width: 600, height: 600, background: `radial-gradient(circle, ${CYAN}16, transparent 70%)` }}
       />
 
       <Header />
@@ -601,7 +602,6 @@ function LP03Quiz() {
             selected={answers[qIdx]}
             onSelect={handleSelect}
             onBack={handleBack}
-            onNext={handleNext}
           />
         )}
         {screen === "loading" && <Loading />}
