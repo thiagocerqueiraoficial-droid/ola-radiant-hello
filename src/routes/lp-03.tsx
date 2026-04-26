@@ -138,14 +138,15 @@ function Header() {
     <header
       className="fixed top-0 left-0 right-0 z-50 px-5 sm:px-8 py-4 flex items-center justify-between"
       style={{
-        background: "rgba(12,12,20,0.7)",
-        backdropFilter: "blur(14px)",
-        WebkitBackdropFilter: "blur(14px)",
+        background: "rgba(5,7,13,0.74)",
+        backdropFilter: "blur(18px) saturate(160%)",
+        WebkitBackdropFilter: "blur(18px) saturate(160%)",
         borderBottom: `1px solid ${LINE}`,
+        boxShadow: `0 0 36px ${CYAN}12`,
       }}
     >
       <p style={{ ...display, fontWeight: 800, color: TEXT, fontSize: 18, letterSpacing: "-0.02em" }}>
-        ALPHA<span style={{ color: LIME }}>.</span>QUIZ
+        ALPHA<span style={{ color: CYAN }}>.</span><span style={{ color: LIME }}>QUIZ</span>
       </p>
       <p style={{ ...body, color: MUTED, fontSize: 12, fontWeight: 500 }}>
         5 perguntas · <span style={{ color: LIME, fontWeight: 700 }}>90 segundos</span>
@@ -164,8 +165,8 @@ function ProgressBar({ pct }: { pct: number }) {
         style={{
           height: "100%",
           width: `${pct}%`,
-          background: `linear-gradient(90deg, ${LIME}, ${PURPLE})`,
-          boxShadow: `0 0 12px ${LIME}80`,
+          background: `linear-gradient(90deg, ${CYAN}, ${LIME}, ${HOT})`,
+          boxShadow: `0 0 16px ${CYAN}80`,
           transition: "width 400ms ease",
         }}
       />
