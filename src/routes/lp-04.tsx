@@ -403,9 +403,6 @@ function LP04News() {
       <Masthead />
       <SectionNav />
 
-      <div className="mx-auto max-w-[760px] px-5">
-        <SponsorTag />
-      </div>
       <div className="mx-auto max-w-[820px] px-5">
         <Headline />
         <Dek />
