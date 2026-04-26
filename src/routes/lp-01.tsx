@@ -117,13 +117,8 @@ function Hero() {
       </div>
 
       <div className="mx-auto max-w-[1320px] px-6 pt-8 pb-20 md:pt-12 md:pb-32 grid grid-cols-12 gap-x-6 gap-y-10 items-end">
-        {/* Big number marker */}
-        <div className="col-span-12 md:col-span-1 order-1">
-          <p style={{ ...display, color: YELLOW, fontSize: "120px", lineHeight: 0.8, opacity: 0.9 }}>01</p>
-        </div>
-
         {/* Headline block — overflows visually into image column */}
-        <div className="col-span-12 md:col-span-7 order-2 md:-mr-16 relative z-10">
+        <div className="col-span-12 md:col-span-8 order-2 md:-mr-16 relative z-10">
           <span
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
             style={{ border: `1px solid ${YELLOW}`, color: YELLOW, ...body, fontSize: "11px", letterSpacing: "0.14em", fontWeight: 700 }}
