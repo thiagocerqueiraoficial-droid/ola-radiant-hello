@@ -384,10 +384,11 @@ function Result({ total }: { total: number }) {
       <div
         className="relative overflow-hidden"
         style={{
-          background: CARD,
-          border: `1px solid ${LINE}`,
+          background: `linear-gradient(145deg, ${CARD}, #080d18 70%)`,
+          border: `1px solid ${CYAN}22`,
           borderRadius: 16,
           padding: "48px 40px",
+          boxShadow: `0 24px 80px rgba(0,0,0,0.34), 0 0 80px ${CYAN}10`,
         }}
       >
         <div
@@ -398,13 +399,13 @@ function Result({ total }: { total: number }) {
             right: -100,
             width: 320,
             height: 320,
-            background: `radial-gradient(circle, ${LIME}33, transparent 70%)`,
+             background: `radial-gradient(circle, ${CYAN}28, transparent 70%)`,
           }}
         />
         <div className="relative">
           <span
             className="inline-block px-3 py-1.5 rounded-full"
-            style={{ background: `${LIME}15`, color: LIME, ...body, fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${LIME}40` }}
+             style={{ background: `${CYAN}12`, color: CYAN, ...body, fontSize: 11, fontWeight: 800, letterSpacing: "0.18em", textTransform: "uppercase", border: `1px solid ${CYAN}40` }}
           >
             Perfil identificado
           </span>
@@ -413,12 +414,12 @@ function Result({ total }: { total: number }) {
             style={{ ...display, fontWeight: 800, color: TEXT, lineHeight: 1.05 }}
           >
             Você é um{" "}
-            <span style={{ color: LIME, fontStyle: "italic" }}>{profile.name}</span>
+            <span style={{ color: LIME, fontStyle: "italic", textShadow: `0 0 24px ${LIME}55` }}>{profile.name}</span>
           </h2>
 
           <div
             className="inline-flex items-center gap-3 mt-6 px-5 py-3 rounded-full"
-            style={{ background: BG2, border: `1px solid ${LINE}` }}
+            style={{ background: BG2, border: `1px solid ${CYAN}22`, boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05)` }}
           >
             <span style={{ ...display, color: LIME, fontWeight: 800, fontSize: 28, lineHeight: 1 }}>
               {score}%
