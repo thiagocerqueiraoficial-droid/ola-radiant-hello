@@ -205,28 +205,28 @@ function Stats() {
     { n: "99%", l: "Acerto nas Lives", big: true },
     { n: "0", l: "Gale ou Proteção" },
     { n: "5x", l: "Lives na Semana" },
-    { n: "12k+", l: "Alunos Ativos" },
+    { n: "16k+", l: "Alunos Ativos" },
   ];
   return (
     <section style={{ background: BG3, borderTop: `1px solid ${LINE}`, borderBottom: `1px solid ${LINE}` }}>
-      <div className="mx-auto max-w-[1320px] px-6 py-16 md:py-24">
-        <div className="flex items-baseline justify-between mb-12">
+      <div className="mx-auto max-w-[1320px] px-6 py-12 md:py-24">
+        <div className="flex items-baseline justify-between gap-4 mb-9 md:mb-12">
           <p style={{ ...body, color: YELLOW, fontSize: "11px", letterSpacing: "0.22em", fontWeight: 700 }}>
             § 02 — NÚMEROS
           </p>
-          <span style={{ ...body, color: MUTED, fontSize: "11px", letterSpacing: "0.18em" }}>ATUALIZADO HOJE</span>
+          <span className="text-right" style={{ ...body, color: MUTED, fontSize: "10px", letterSpacing: "0.16em" }}>ATUALIZADO HOJE</span>
         </div>
-        <div className="grid grid-cols-12 gap-x-6 gap-y-10 items-end">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-x-6 md:gap-y-10 items-stretch md:items-end">
           {items.map((s, i) => {
-            const span = s.big ? "col-span-12 md:col-span-6" : "col-span-6 md:col-span-2";
+            const span = s.big ? "col-span-2 md:col-span-6" : "col-span-1 md:col-span-2";
             return (
               <div
                 key={i}
-                className={span}
-                style={i > 0 ? { borderLeft: `1px solid ${LINE}`, paddingLeft: 20 } : {}}
+                className={`${span} flex min-h-[118px] flex-col justify-end border border-white/10 p-4 md:block md:min-h-0 md:border-0 md:p-0`}
+                style={i > 0 ? { borderLeft: `1px solid ${LINE}` } : {}}
               >
                 <p
-                  className={s.big ? "text-[110px] md:text-[180px]" : "text-[56px] md:text-[80px]"}
+                  className={s.big ? "text-[88px] sm:text-[110px] md:text-[180px]" : "text-[46px] sm:text-[56px] md:text-[80px]"}
                   style={{
                     ...display,
                     color: s.big ? YELLOW : TEXT,
