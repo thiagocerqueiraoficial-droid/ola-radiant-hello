@@ -576,16 +576,18 @@ function LP03Quiz() {
       <style>{`
         @keyframes lp03-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes lp03-spin { to { transform: rotate(360deg); } }
+        .lp03-grid-bg { background-image: linear-gradient(rgba(34,211,238,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,0.07) 1px, transparent 1px); background-size: 36px 36px; mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent); }
       `}</style>
+      <div aria-hidden className="lp03-grid-bg absolute inset-0 pointer-events-none opacity-70" />
       <div
         aria-hidden
         className="absolute pointer-events-none"
-        style={{ top: -200, left: -200, width: 600, height: 600, background: `radial-gradient(circle, ${PURPLE}22, transparent 70%)` }}
+        style={{ top: -200, left: -200, width: 600, height: 600, background: `radial-gradient(circle, ${PURPLE}24, transparent 70%)` }}
       />
       <div
         aria-hidden
         className="absolute pointer-events-none"
-        style={{ bottom: -200, right: -200, width: 600, height: 600, background: `radial-gradient(circle, ${LIME}11, transparent 70%)` }}
+        style={{ bottom: -200, right: -200, width: 600, height: 600, background: `radial-gradient(circle, ${CYAN}16, transparent 70%)` }}
       />
 
       <Header />
