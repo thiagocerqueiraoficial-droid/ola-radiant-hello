@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import traderPhoto from "@/assets/trader-delucca-live.png";
+import traderPhoto from "@/assets/trader-delucca-fullscreen.png";
 import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-04")({
@@ -169,21 +169,21 @@ function Byline() {
 
 function HeroPhoto() {
   return (
-    <figure className="mx-auto max-w-[860px] mt-8 px-0">
+    <figure className="mt-8 w-full">
       <div
         className="overflow-hidden"
-        style={{ aspectRatio: "16/9", background: "#1a1a1a", border: `1px solid ${RULE}` }}
+        style={{ background: "#1a1a1a" }}
       >
         <img
           src={traderPhoto}
           alt={`${NOME_TRADER} durante live diária em sua sala de operações`}
-          className="w-full h-full object-contain"
+          className="w-full h-auto block"
           style={{ filter: "grayscale(0.85) contrast(1.05)" }}
           loading="eager"
         />
       </div>
       <figcaption
-        className="mt-3 px-1"
+        className="mx-auto max-w-[860px] mt-3 px-5"
         style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 14, lineHeight: 1.5 }}
       >
         {NOME_TRADER} durante live diária em sua sala de operações. Foto: Divulgação / Alpha Academy
@@ -411,9 +411,7 @@ function LP04News() {
       <div className="mx-auto max-w-[760px] px-5">
         <Byline />
       </div>
-      <div className="px-5">
-        <HeroPhoto />
-      </div>
+      <HeroPhoto />
 
       <Body />
 
