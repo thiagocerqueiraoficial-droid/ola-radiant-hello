@@ -47,3 +47,19 @@ BEGIN
     );
   END IF;
 END $$;
+
+-- Pin search_path on known SECURITY DEFINER helpers to avoid object-shadowing risks.
+DO $$
+BEGIN
+  IF to_regprocedure('public.newera_mark_purchase_paid(text, numeric)') IS NOT NULL THEN
+    ALTER FUNCTION public.newera_mark_purchase_paid(text, numeric) SET search_path = public, pg_temp;
+  END IF;
+
+  IF to_regprocedure('public.newera_attach_license_to_purchase(uuid, text, timestamp with time zone, text)') IS NOT NULL THEN
+    ALTER FUNCTION public.newera_attach_license_to_purchase(uuid, text, timestamptz, text) SET search_path = public, pg_temp;
+  END IF;
+
+  IF to_regprocedure('public.newera_user_has_active_license(uuid)') IS NOT NULL THEN
+    ALTER FUNCTION public.newera_user_has_active_license(uuid) SET search_path = public, pg_temp;
+  END IF;
+END $$;
