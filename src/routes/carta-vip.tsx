@@ -151,7 +151,7 @@ function Body() {
           { b: "Sala ao vivo todos os dias.", t: " Eu entro, abro o gráfico, opero. Você assiste e copia se quiser." },
           { b: "Curso completo liberado.", t: " Do básico ao avançado." },
           { b: "Comunidade fechada.", t: " Operadores selecionados. Ninguém entra sem conversar comigo antes." },
-          { b: "Filtro de entrada.", t: " Não é caixa. É conversa. Você manda mensagem, eu te explico as regras, e a gente vê se faz sentido." },
+          { b: "Filtro de entrada.", t: " Quem chega manda mensagem direto pro meu WhatsApp. Eu apresento as regras da comunidade, ouço o que a pessoa quer, e a gente decide juntos se cabe entrar." },
         ].map((item, i) => (
           <li key={i} className="py-4 flex gap-3" style={{ borderBottom: `1px dashed ${RULE}` }}>
             <span style={{ color: ACCENT, fontWeight: 700, lineHeight: 1.65 }}>→</span>
@@ -203,7 +203,7 @@ function Cta() {
           Manda mensagem. A gente conversa. Daí decide.
         </h3>
         <p className="mt-6 text-base sm:text-lg" style={{ ...serif, color: "#bdbdb5", lineHeight: 1.55 }}>
-          Sem grupo aberto. Sem botão automático. Eu vou te explicar as regras, e a gente avalia se a comunidade faz sentido pra você.
+          Você manda mensagem. Eu te explico como a comunidade funciona, quem entra, quem fica de fora, e qual a expectativa pra quem fica. Daí você decide com a informação completa.
         </p>
         <a
           href={LINK_WHATSAPP}
