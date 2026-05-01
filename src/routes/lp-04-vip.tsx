@@ -143,17 +143,17 @@ function Byline() {
 
 function HeroPhoto() {
   return (
-    <figure className="mt-8 w-full">
-      <div className="overflow-hidden" style={{ background: "#1a1a1a" }}>
+    <figure className="mx-auto max-w-[760px] px-5 mt-8 w-full">
+      <div className="overflow-hidden mx-auto" style={{ background: "#1a1a1a", maxWidth: 520 }}>
         <img
           src={traderPhoto}
           alt={`${NOME_TRADER} durante live diária em sua sala de operações`}
           className="w-full h-auto block"
-          style={{ filter: "grayscale(0.85) contrast(1.05)" }}
+          style={{ filter: "grayscale(0.85) contrast(1.05)", aspectRatio: "1 / 1", objectFit: "cover" }}
           loading="eager"
         />
       </div>
-      <figcaption className="mx-auto max-w-[860px] mt-3 px-5" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 14, lineHeight: 1.5 }}>
+      <figcaption className="mx-auto max-w-[520px] mt-3" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 14, lineHeight: 1.5 }}>
         {NOME_TRADER} durante live diária em sua sala de operações. Foto: Divulgação / Alpha Academy
       </figcaption>
     </figure>
