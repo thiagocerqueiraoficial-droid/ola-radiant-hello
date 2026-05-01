@@ -9,12 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Lp04VipRouteImport } from './routes/lp-04-vip'
 import { Route as Lp04RouteImport } from './routes/lp-04'
 import { Route as Lp03RouteImport } from './routes/lp-03'
 import { Route as Lp02RouteImport } from './routes/lp-02'
 import { Route as Lp01RouteImport } from './routes/lp-01'
+import { Route as CartaVipRouteImport } from './routes/carta-vip'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Lp04VipRoute = Lp04VipRouteImport.update({
+  id: '/lp-04-vip',
+  path: '/lp-04-vip',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Lp04Route = Lp04RouteImport.update({
   id: '/lp-04',
   path: '/lp-04',
@@ -35,6 +42,11 @@ const Lp01Route = Lp01RouteImport.update({
   path: '/lp-01',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CartaVipRoute = CartaVipRouteImport.update({
+  id: '/carta-vip',
+  path: '/carta-vip',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -43,44 +55,81 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/carta-vip': typeof CartaVipRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
   '/lp-04': typeof Lp04Route
+  '/lp-04-vip': typeof Lp04VipRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/carta-vip': typeof CartaVipRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
   '/lp-04': typeof Lp04Route
+  '/lp-04-vip': typeof Lp04VipRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/carta-vip': typeof CartaVipRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
   '/lp-04': typeof Lp04Route
+  '/lp-04-vip': typeof Lp04VipRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lp-01' | '/lp-02' | '/lp-03' | '/lp-04'
+  fullPaths:
+    | '/'
+    | '/carta-vip'
+    | '/lp-01'
+    | '/lp-02'
+    | '/lp-03'
+    | '/lp-04'
+    | '/lp-04-vip'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lp-01' | '/lp-02' | '/lp-03' | '/lp-04'
-  id: '__root__' | '/' | '/lp-01' | '/lp-02' | '/lp-03' | '/lp-04'
+  to:
+    | '/'
+    | '/carta-vip'
+    | '/lp-01'
+    | '/lp-02'
+    | '/lp-03'
+    | '/lp-04'
+    | '/lp-04-vip'
+  id:
+    | '__root__'
+    | '/'
+    | '/carta-vip'
+    | '/lp-01'
+    | '/lp-02'
+    | '/lp-03'
+    | '/lp-04'
+    | '/lp-04-vip'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CartaVipRoute: typeof CartaVipRoute
   Lp01Route: typeof Lp01Route
   Lp02Route: typeof Lp02Route
   Lp03Route: typeof Lp03Route
   Lp04Route: typeof Lp04Route
+  Lp04VipRoute: typeof Lp04VipRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/lp-04-vip': {
+      id: '/lp-04-vip'
+      path: '/lp-04-vip'
+      fullPath: '/lp-04-vip'
+      preLoaderRoute: typeof Lp04VipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lp-04': {
       id: '/lp-04'
       path: '/lp-04'
@@ -109,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Lp01RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/carta-vip': {
+      id: '/carta-vip'
+      path: '/carta-vip'
+      fullPath: '/carta-vip'
+      preLoaderRoute: typeof CartaVipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -121,10 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CartaVipRoute: CartaVipRoute,
   Lp01Route: Lp01Route,
   Lp02Route: Lp02Route,
   Lp03Route: Lp03Route,
   Lp04Route: Lp04Route,
+  Lp04VipRoute: Lp04VipRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
