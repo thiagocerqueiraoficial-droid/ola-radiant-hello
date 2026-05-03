@@ -148,9 +148,9 @@ function Body() {
 
       <ul className="mt-6 mb-8">
         {[
-          { b: "Sala ao vivo todos os dias.", t: " Eu entro, abro o gráfico, opero. Você assiste e copia se quiser." },
+          { b: "Sala ao vivo todos os dias.", t: " Eu abro o gráfico e opero. Você assiste e copia se quiser." },
           { b: "Curso completo liberado.", t: " Do básico ao avançado." },
-          { b: "Entrada por conversa.", t: " Você manda mensagem direto pro meu WhatsApp. Eu apresento as regras, ouço o que você quer, e a gente decide juntos se cabe." },
+          { b: "Análise pós-mercado.", t: " Revisão diária dos movimentos do dia com a comunidade." },
         ].map((item, i) => (
           <li key={i} className="py-4 flex gap-3" style={{ borderBottom: `1px dashed ${RULE}` }}>
             <span style={{ color: ACCENT, fontWeight: 700, lineHeight: 1.65 }}>→</span>
@@ -158,10 +158,6 @@ function Body() {
           </li>
         ))}
       </ul>
-
-      <p className="mt-8">
-        Não tem pegadinha. Não tem upsell na porta de entrada. Você manda mensagem, a gente conversa, e daí você decide. É esse o contrato.
-      </p>
 
       <hr className="mt-16 mb-8" style={{ border: 0, borderTop: `1px solid ${RULE}` }} />
 
