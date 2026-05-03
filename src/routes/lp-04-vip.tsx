@@ -290,9 +290,6 @@ function Body() {
       </P>
 
       <P>
-        Outro fator que chama atenção é o modelo de admissão: a Alpha Academy filtra cada entrada por conversa direta, em vez de aceitar qualquer pagador ou cadastro em massa.
-      </P>
-      <P>
         “Hoje eu prefiro abrir menos vagas e abrir certo”, explica {NOME_TRADER} à reportagem.
       </P>
 

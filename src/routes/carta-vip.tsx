@@ -134,7 +134,7 @@ function Body() {
       </p>
 
       <p className="mt-6">
-        Mas eu não opero pra qualquer um. A comunidade tá fechada porque eu já cansei de aventureiro entrando, perdendo banca em duas semanas, e saindo culpando o método. Quem entra hoje, entra depois de uma conversa rápida comigo. Eu apresento as regras. Você decide se faz sentido. Eu decido se faz sentido você entrar.
+        Mas eu não opero pra qualquer um. Já cansei de aventureiro entrando, perdendo banca em duas semanas, e saindo culpando o método. Por isso a porta de entrada hoje é uma conversa comigo, não um botão de pagamento.
       </p>
 
       <blockquote className="my-12 pl-6" style={{ borderLeft: `4px solid ${ACCENT}`, ...serif, fontStyle: "italic", fontWeight: 600, fontSize: "26px", lineHeight: 1.35, color: INK }}>
