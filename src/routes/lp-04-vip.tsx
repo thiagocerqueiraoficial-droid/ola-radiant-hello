@@ -196,7 +196,7 @@ function HowItWorksBox() {
         Como funciona o acesso
       </p>
       <p className="mt-3" style={{ ...serif, color: INK, fontSize: 17, lineHeight: 1.6 }}>
-        A entrada na comunidade Alpha Academy é feita por conversa direta com o trader, via WhatsApp. Após o contato inicial, {NOME_TRADER} apresenta as regras da comunidade e avalia se o perfil do interessado faz sentido. Não há cobrança para entrar, mas há filtro.
+        Entrada por WhatsApp, sem cobrança e com filtro de perfil feito pelo próprio trader.
       </p>
       <a
         href={LINK_WHATSAPP}
@@ -290,10 +290,10 @@ function Body() {
       </P>
 
       <P>
-        Outro fator que tem chamado atenção no caso é o modelo de admissão. Ao contrário das comunidades pagas tradicionais, que aceitam qualquer pagador, e dos grupos gratuitos abertos, que aceitam qualquer cadastro, a Alpha Academy filtra cada entrada por conversa direta no WhatsApp.
+        Outro fator que chama atenção é o modelo de admissão: a Alpha Academy filtra cada entrada por conversa direta, em vez de aceitar qualquer pagador ou cadastro em massa.
       </P>
       <P>
-        “A gente já passou por aventureiro entrando, queimando banca em duas semanas e saindo culpando o método”, explica {NOME_TRADER} à reportagem. “Hoje eu prefiro abrir menos vagas e abrir certo.”
+        “Hoje eu prefiro abrir menos vagas e abrir certo”, explica {NOME_TRADER} à reportagem.
       </P>
 
       <HowItWorksBox />

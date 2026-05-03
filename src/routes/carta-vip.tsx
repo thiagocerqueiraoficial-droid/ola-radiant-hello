@@ -148,9 +148,9 @@ function Body() {
 
       <ul className="mt-6 mb-8">
         {[
-          { b: "Sala ao vivo todos os dias.", t: " Eu entro, abro o gráfico, opero. Você assiste e copia se quiser." },
+          { b: "Sala ao vivo todos os dias.", t: " Eu abro o gráfico e opero. Você assiste e copia se quiser." },
           { b: "Curso completo liberado.", t: " Do básico ao avançado." },
-          { b: "Entrada por conversa.", t: " Você manda mensagem direto pro meu WhatsApp. Eu apresento as regras, ouço o que você quer, e a gente decide juntos se cabe." },
+          { b: "Análise pós-mercado.", t: " Revisão diária dos movimentos do dia com a comunidade." },
         ].map((item, i) => (
           <li key={i} className="py-4 flex gap-3" style={{ borderBottom: `1px dashed ${RULE}` }}>
             <span style={{ color: ACCENT, fontWeight: 700, lineHeight: 1.65 }}>→</span>
@@ -158,10 +158,6 @@ function Body() {
           </li>
         ))}
       </ul>
-
-      <p className="mt-8">
-        Não tem pegadinha. Não tem upsell na porta de entrada. Você manda mensagem, a gente conversa, e daí você decide. É esse o contrato.
-      </p>
 
       <hr className="mt-16 mb-8" style={{ border: 0, borderTop: `1px solid ${RULE}` }} />
 
@@ -178,7 +174,7 @@ function Body() {
           P.S.
         </span>
         <p style={{ ...serif, fontSize: "18px", lineHeight: 1.6 }}>
-          Se você já se queimou antes, sei que vai ler essa carta desconfiado. Eu leria também. Por isso a porta de entrada aqui não é um botão automático: é uma conversa direta comigo no WhatsApp. Se fizer sentido pra você, te conto como funciona daí pra frente.
+          Se você já se queimou antes, vai ler isso desconfiado. Eu leria também. Assiste uma live antes de qualquer coisa. Se fizer sentido, a gente conversa.
         </p>
       </div>
     </article>
@@ -199,7 +195,7 @@ function Cta() {
           Manda mensagem. A gente conversa. Daí decide.
         </h3>
         <p className="mt-6 text-base sm:text-lg" style={{ ...serif, color: "#bdbdb5", lineHeight: 1.55 }}>
-          Você manda mensagem. Eu te explico como a comunidade funciona, quem entra, quem fica de fora, e qual a expectativa pra quem fica. Daí você decide com a informação completa.
+          Sem grupo automático. Sem cadastro em massa. Conversa direta.
         </p>
         <a
           href={LINK_WHATSAPP}
