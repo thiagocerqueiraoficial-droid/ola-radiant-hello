@@ -195,7 +195,7 @@ function Cta() {
           Manda mensagem. A gente conversa. Daí decide.
         </h3>
         <p className="mt-6 text-base sm:text-lg" style={{ ...serif, color: "#bdbdb5", lineHeight: 1.55 }}>
-          Você manda mensagem. Eu te explico como a comunidade funciona, quem entra, quem fica de fora, e qual a expectativa pra quem fica. Daí você decide com a informação completa.
+          Sem grupo automático. Sem cadastro em massa. Conversa direta.
         </p>
         <a
           href={LINK_WHATSAPP}
