@@ -150,8 +150,7 @@ function Body() {
         {[
           { b: "Sala ao vivo todos os dias.", t: " Eu entro, abro o gráfico, opero. Você assiste e copia se quiser." },
           { b: "Curso completo liberado.", t: " Do básico ao avançado." },
-          { b: "Comunidade fechada.", t: " Operadores selecionados. Ninguém entra sem conversar comigo antes." },
-          { b: "Filtro de entrada.", t: " Quem chega manda mensagem direto pro meu WhatsApp. Eu apresento as regras da comunidade, ouço o que a pessoa quer, e a gente decide juntos se cabe entrar." },
+          { b: "Entrada por conversa.", t: " Você manda mensagem direto pro meu WhatsApp. Eu apresento as regras, ouço o que você quer, e a gente decide juntos se cabe." },
         ].map((item, i) => (
           <li key={i} className="py-4 flex gap-3" style={{ borderBottom: `1px dashed ${RULE}` }}>
             <span style={{ color: ACCENT, fontWeight: 700, lineHeight: 1.65 }}>→</span>
