@@ -212,28 +212,7 @@ function HowItWorksBox() {
 }
 
 function InlineCta() {
-  return (
-    <aside className="mx-auto max-w-[760px] mt-14 p-8" style={{ background: PAPER2, border: `1px solid ${RULE}` }}>
-      <p style={{ ...meta, color: ACCENT, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700 }}>
-        Contato direto
-      </p>
-      <h3 className="mt-3" style={{ ...display, color: INK, fontSize: 28, fontWeight: 700, lineHeight: 1.2 }}>
-        Manda mensagem. Recebe as regras. Decide com calma.
-      </h3>
-      <p className="mt-3" style={{ ...serif, color: INK_SOFT, fontSize: 17, lineHeight: 1.55 }}>
-        O canal direto com {NOME_TRADER} está aberto via WhatsApp. Sem grupo automático, sem cadastro em massa.
-      </p>
-      <a
-        href={LINK_WHATSAPP}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block mt-6"
-        style={{ ...meta, background: ACCENT, color: "#fff", fontWeight: 600, fontSize: 15, padding: "16px 28px", letterSpacing: "0.04em" }}
-      >
-        Falar no WhatsApp ↓
-      </a>
-    </aside>
-  );
+  return null;
 }
 
 function ReadAlso() {
