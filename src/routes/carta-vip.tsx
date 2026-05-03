@@ -179,10 +179,7 @@ function Body() {
           P.S.
         </span>
         <p style={{ ...serif, fontSize: "18px", lineHeight: 1.6 }}>
-          Se você já se queimou antes, sei que vai ler essa carta desconfiado. Eu leria também. Por isso a porta de entrada não é um botão automático que te joga num grupo lotado.
-        </p>
-        <p className="mt-4" style={{ ...serif, fontSize: "18px", lineHeight: 1.6 }}>
-          A porta de entrada é uma conversa direta comigo. Você manda mensagem no WhatsApp, eu te apresento as regras, e a gente vê se faz sentido. Se não fizer, sem problema. Se fizer, te conto como funciona daí pra frente.
+          Se você já se queimou antes, sei que vai ler essa carta desconfiado. Eu leria também. Por isso a porta de entrada aqui não é um botão automático: é uma conversa direta comigo no WhatsApp. Se fizer sentido pra você, te conto como funciona daí pra frente.
         </p>
       </div>
     </article>
