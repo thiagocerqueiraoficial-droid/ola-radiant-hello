@@ -212,28 +212,7 @@ function HowItWorksBox() {
 }
 
 function InlineCta() {
-  return (
-    <aside className="mx-auto max-w-[760px] mt-14 p-8" style={{ background: PAPER2, border: `1px solid ${RULE}` }}>
-      <p style={{ ...meta, color: ACCENT, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700 }}>
-        Contato direto
-      </p>
-      <h3 className="mt-3" style={{ ...display, color: INK, fontSize: 28, fontWeight: 700, lineHeight: 1.2 }}>
-        Manda mensagem. Recebe as regras. Decide com calma.
-      </h3>
-      <p className="mt-3" style={{ ...serif, color: INK_SOFT, fontSize: 17, lineHeight: 1.55 }}>
-        O canal direto com {NOME_TRADER} está aberto via WhatsApp. Sem grupo automático, sem cadastro em massa.
-      </p>
-      <a
-        href={LINK_WHATSAPP}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block mt-6"
-        style={{ ...meta, background: ACCENT, color: "#fff", fontWeight: 600, fontSize: 15, padding: "16px 28px", letterSpacing: "0.04em" }}
-      >
-        Falar no WhatsApp ↓
-      </a>
-    </aside>
-  );
+  return null;
 }
 
 function ReadAlso() {
@@ -311,27 +290,17 @@ function Body() {
       </P>
 
       <P>
-        Outro fator que tem chamado atenção no caso é o modelo de admissão. Ao contrário das comunidades pagas tradicionais, que aceitam qualquer pagador, e dos grupos gratuitos abertos, que aceitam qualquer cadastro, a Alpha Academy filtra cada entrada por conversa direta.
+        Outro fator que tem chamado atenção no caso é o modelo de admissão. Ao contrário das comunidades pagas tradicionais, que aceitam qualquer pagador, e dos grupos gratuitos abertos, que aceitam qualquer cadastro, a Alpha Academy filtra cada entrada por conversa direta no WhatsApp.
       </P>
       <P>
         “A gente já passou por aventureiro entrando, queimando banca em duas semanas e saindo culpando o método”, explica {NOME_TRADER} à reportagem. “Hoje eu prefiro abrir menos vagas e abrir certo.”
       </P>
-      <P>
-        O filtro funciona via WhatsApp: o interessado manda mensagem, recebe as regras da comunidade, e o próprio trader avalia o perfil antes de liberar o acesso. O modelo é incomum no mercado digital brasileiro, onde o padrão é o contrário: quanto mais pessoas, melhor.
-      </P>
 
       <HowItWorksBox />
 
-      <P>
-        {NOME_TRADER} evita comentar diretamente sobre concorrentes. Em entrevista, ele se limita a dizer que o modelo “se vende sozinho quando a pessoa assiste uma live”. A Alpha Academy não divulga faturamento, mas afirma que a base de membros segue em expansão controlada.
-      </P>
-
       <H2>O que esperar daqui pra frente</H2>
       <P>
-        Para 2026, a academia projeta expansão da base de operadores e lançamento de um programa de formação avançada voltado para quem já opera com consistência. A porta de entrada continua sendo a conversa direta com o trader, com vagas abertas em lotes conforme demanda.
-      </P>
-      <P>
-        Para quem tem curiosidade sobre o modelo, o canal de contato direto continua disponível. A recomendação do próprio trader é simples: mande mensagem, ouça as regras, e decida com informação completa se faz sentido pra você.
+        Para 2026, a academia projeta expansão da base de operadores e lançamento de um programa de formação avançada voltado para quem já opera com consistência. As vagas seguem abertas em lotes conforme demanda.
       </P>
     </article>
   );

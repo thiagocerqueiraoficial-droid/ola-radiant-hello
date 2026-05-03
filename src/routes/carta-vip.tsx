@@ -150,8 +150,7 @@ function Body() {
         {[
           { b: "Sala ao vivo todos os dias.", t: " Eu entro, abro o gráfico, opero. Você assiste e copia se quiser." },
           { b: "Curso completo liberado.", t: " Do básico ao avançado." },
-          { b: "Comunidade fechada.", t: " Operadores selecionados. Ninguém entra sem conversar comigo antes." },
-          { b: "Filtro de entrada.", t: " Quem chega manda mensagem direto pro meu WhatsApp. Eu apresento as regras da comunidade, ouço o que a pessoa quer, e a gente decide juntos se cabe entrar." },
+          { b: "Entrada por conversa.", t: " Você manda mensagem direto pro meu WhatsApp. Eu apresento as regras, ouço o que você quer, e a gente decide juntos se cabe." },
         ].map((item, i) => (
           <li key={i} className="py-4 flex gap-3" style={{ borderBottom: `1px dashed ${RULE}` }}>
             <span style={{ color: ACCENT, fontWeight: 700, lineHeight: 1.65 }}>→</span>
@@ -179,10 +178,7 @@ function Body() {
           P.S.
         </span>
         <p style={{ ...serif, fontSize: "18px", lineHeight: 1.6 }}>
-          Se você já se queimou antes, sei que vai ler essa carta desconfiado. Eu leria também. Por isso a porta de entrada não é um botão automático que te joga num grupo lotado.
-        </p>
-        <p className="mt-4" style={{ ...serif, fontSize: "18px", lineHeight: 1.6 }}>
-          A porta de entrada é uma conversa direta comigo. Você manda mensagem no WhatsApp, eu te apresento as regras, e a gente vê se faz sentido. Se não fizer, sem problema. Se fizer, te conto como funciona daí pra frente.
+          Se você já se queimou antes, sei que vai ler essa carta desconfiado. Eu leria também. Por isso a porta de entrada aqui não é um botão automático: é uma conversa direta comigo no WhatsApp. Se fizer sentido pra você, te conto como funciona daí pra frente.
         </p>
       </div>
     </article>
