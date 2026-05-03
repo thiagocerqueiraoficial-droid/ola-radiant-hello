@@ -174,7 +174,7 @@ function Body() {
           P.S.
         </span>
         <p style={{ ...serif, fontSize: "18px", lineHeight: 1.6 }}>
-          Se você já se queimou antes, sei que vai ler essa carta desconfiado. Eu leria também. Por isso a porta de entrada aqui não é um botão automático: é uma conversa direta comigo no WhatsApp. Se fizer sentido pra você, te conto como funciona daí pra frente.
+          Se você já se queimou antes, vai ler isso desconfiado. Eu leria também. Assiste uma live antes de qualquer coisa. Se fizer sentido, a gente conversa.
         </p>
       </div>
     </article>
