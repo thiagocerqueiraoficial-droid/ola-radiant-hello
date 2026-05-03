@@ -196,7 +196,7 @@ function HowItWorksBox() {
         Como funciona o acesso
       </p>
       <p className="mt-3" style={{ ...serif, color: INK, fontSize: 17, lineHeight: 1.6 }}>
-        A entrada na comunidade Alpha Academy é feita por conversa direta com o trader, via WhatsApp. Após o contato inicial, {NOME_TRADER} apresenta as regras da comunidade e avalia se o perfil do interessado faz sentido. Não há cobrança para entrar, mas há filtro.
+        Entrada por WhatsApp, sem cobrança e com filtro de perfil feito pelo próprio trader.
       </p>
       <a
         href={LINK_WHATSAPP}
