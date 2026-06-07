@@ -168,7 +168,7 @@ function PullQuote() {
   return (
     <blockquote className="my-10 pl-6" style={{ borderLeft: `4px solid ${ALERT}` }}>
       <p style={{ ...display, color: INK, fontSize: 26, fontStyle: "italic", lineHeight: 1.35, fontWeight: 700 }}>
-        “Eu não quero o dinheiro de ninguém para começar. Eu quero que você veja o dinheiro na sua conta antes de me pagar um centavo.”
+        “Eu não quero o seu dinheiro agora. Você cria sua conta e deposita. Eu entro, dobro, e só depois que você vir o dinheiro dobrado, você me paga.”
       </p>
       <cite className="block mt-4" style={{ ...meta, color: INK_SOFT, fontSize: 12, fontStyle: "normal", letterSpacing: "0.06em" }}>
         {NOME_TRADER}, em entrevista exclusiva
@@ -185,8 +185,8 @@ function HowItWorksBox() {
       </p>
       <ul className="mt-4 space-y-3" style={{ ...serif, color: INK, fontSize: 16, lineHeight: 1.4 }}>
         <li><strong>1. Contato:</strong> Você me chama no WhatsApp e diz "ENTROU".</li>
-        <li><strong>2. Execução:</strong> Eu dobro seu capital na sua própria conta em até 24 horas.</li>
-        <li><strong>3. Acerto:</strong> Você só me paga a minha parte depois que o lucro estiver na sua mão.</li>
+        <li><strong>2. Execução:</strong> Você cria sua conta e deposita. Eu entro e dobro seu capital em até 24 horas.</li>
+        <li><strong>3. Acerto:</strong> Só depois que você vê o dinheiro dobrado na conta, você me paga a minha parte.</li>
       </ul>
       <a
         href={LINK_WHATSAPP}
@@ -225,10 +225,10 @@ function Body() {
 
       <H2>Transação sem risco antecipado</H2>
       <P>
-        O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação.
+        O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação. "Você não me paga nada agora. Eu não quero o seu dinheiro. Você vai criar a sua conta e depositar", explica.
       </P>
       <P>
-        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê o dinheiro lá, pronto para o saque. Se o impensável acontecer e a operação falhar, o acordo é claro: eu te envio o PIX dos 200 reais de volta", afirma o estrategista.
+        O objetivo é claro: dobrar o valor em 24 horas. "Eu entro, dobro, e só depois que você vê o dinheiro na conta, dobrado, você me paga. Se o impensável acontecer e a operação falhar, o acordo é claro como vidro: eu te envio o PIX dos 200 reais de volta", afirma o estrategista.
       </P>
 
       <PullQuote />
