@@ -122,9 +122,9 @@ function Body() {
         <div className="flex gap-5">
           <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold" style={mono}>01</div>
           <div>
-            <h3 className="font-bold text-xl mb-2">Controle de Dano</h3>
+            <h3 className="font-bold text-xl mb-2">Conta e Depósito (Risco Zero)</h3>
             <p>
-              Deposite exatamente 200 reais na sua conta. Não 500. Não 1000. Apenas 200. Esse valor foi calculado friamente. É o suficiente para você testar a veracidade do meu método, para sentir a adrenalina da vitória real, mas não é o suficiente para arruinar sua vida se o impensável acontecer. É a sua entrada no jogo com risco calculado.
+              Você cria sua própria conta e deposita exatamente 200 reais. <strong style={{ fontWeight: 700 }}>Você não me envia um centavo.</strong> O dinheiro continua sob seu total controle. Esse valor é o seu "bilhete de entrada" para testar o método com risco calculado.
             </p>
           </div>
         </div>
@@ -132,9 +132,9 @@ function Body() {
         <div className="flex gap-5">
           <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold" style={mono}>02</div>
           <div>
-            <h3 className="font-bold text-xl mb-2">A Execução</h3>
+            <h3 className="font-bold text-xl mb-2">A Execução (Dobra em 24h)</h3>
             <p>
-              Em 24 horas, você terá 100% de retorno sobre esse valor. Ou seja, 400 reais na sua conta. Dinheiro limpo. Sem complicações burocráticas. Sem taxa de saque escondida. Eu entro na sua operação, aplico a estratégia de ruptura que as corretoras temem e viro o jogo a seu favor.
+              Eu entro na sua conta, aplico a estratégia de ruptura e dobro o capital. Em 24 horas, você terá 400 reais lá, prontos para o saque. Dinheiro limpo, disponível na hora.
             </p>
           </div>
         </div>
@@ -142,9 +142,9 @@ function Body() {
         <div className="flex gap-5">
           <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold" style={mono}>03</div>
           <div>
-            <h3 className="font-bold text-xl mb-2">A Divisa do Lucro</h3>
+            <h3 className="font-bold text-xl mb-2">Acerto de Contas (Só após o Lucro)</h3>
             <p>
-              Eu faço a mágica acontecer. Você recebe a metade do lucro gerado. Justo? Absolutamente. Porque eu não quero o seu dinheiro de entrada. Eu quero sua confiança. E no meu mundo, confiança se constrói com resultados tangíveis, com dinheiro na mão.
+              <strong style={{ fontWeight: 700 }}>Você só me paga a minha parte depois que o lucro estiver na sua conta.</strong> Não existe pagamento antecipado, taxa de inscrição ou mensalidade. Eu entrego o resultado primeiro, você vê o dinheiro, e só então fazemos o acerto. É performance pura.
             </p>
           </div>
         </div>
