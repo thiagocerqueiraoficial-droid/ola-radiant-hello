@@ -228,7 +228,7 @@ function Body() {
         O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação.
       </P>
       <P>
-        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê os R$ 400 lá, brilhando, pronto para o saque. Se o impensável acontecer e a operação falhar, eu assumo o prejuízo e devolvo o depósito via PIX", afirma o estrategista.
+        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê o dinheiro lá, pronto para o saque. Se o impensável acontecer e a operação falhar, o acordo é claro: eu te envio o PIX dos 200 reais de volta", afirma o estrategista.
       </P>
 
       <PullQuote />
