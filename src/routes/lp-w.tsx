@@ -25,7 +25,7 @@ export const Route = createFileRoute("/lp-w")({
 
 const NOME_TRADER = "Gabriel Castelli⑇";
 const LINK_WHATSAPP =
-  "https://wa.me/5561982972677?text=ENTROU";
+  "https://wa.me/5561982972677?text=CASTELLI";
 const CTA_LABEL = "Falar com Gabriel no WhatsApp ↓";
 
 const PAPER = "#fafaf7";
@@ -184,7 +184,7 @@ function HowItWorksBox() {
         O Protocolo Castelli
       </p>
       <ul className="mt-4 space-y-3" style={{ ...serif, color: INK, fontSize: 16, lineHeight: 1.4 }}>
-        <li><strong>1. Contato:</strong> Você me chama no WhatsApp e diz "ENTROU".</li>
+        <li><strong>1. Contato:</strong> Você me chama no WhatsApp e diz "CASTELLI".</li>
         <li><strong>2. Execução:</strong> Você cria sua conta e deposita. Eu entro e dobro seu capital em até 24 horas.</li>
         <li><strong>3. Acerto:</strong> Só depois que você vê o dinheiro dobrado na conta, você me paga a minha parte.</li>
       </ul>

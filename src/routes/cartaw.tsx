@@ -22,8 +22,8 @@ export const Route = createFileRoute("/cartaw")({
 
 const NOME_TRADER = "Gabriel Castelli⑇";
 const LINK_WHATSAPP =
-  "https://wa.me/5561982972677?text=ENTROU";
-const CTA_LABEL = "Enviar \"ENTROU\" para Castelli no WhatsApp ↓";
+  "https://wa.me/5561982972677?text=CASTELLI";
+const CTA_LABEL = "Manda CASTELLI no meu whatsapp pessoal ↓";
 
 const PAPER = "#fdfcf9"; // Slightly whiter but still paper-like
 const INK = "#111111";
@@ -168,7 +168,7 @@ function Body() {
       </p>
 
       <p className="mt-8 font-bold text-2xl" style={{ color: ACCENT }}>
-        A hora de teorizar acabou. Me chama agora no WhatsApp e diz "ENTROU". Eu vou te explicar como a gente começa.
+        A hora de teorizar acabou. Me chama agora no WhatsApp e diz "CASTELLI". Eu vou te explicar como a gente começa.
       </p>
 
       <p className="mt-8">
@@ -211,7 +211,7 @@ function Cta() {
     >
       <div className="mx-auto max-w-[800px] text-center">
         <h3 className="text-3xl sm:text-5xl" style={{ ...serif, fontWeight: 800, color: "#ffffff", lineHeight: 1.15, letterSpacing: "-0.01em" }}>
-          Mande <span className="italic text-accent">"ENTROU"</span> agora. 
+          Mande <span className="italic text-accent">"CASTELLI"</span> agora. 
           <br className="hidden sm:block" /> Ou aceite o jogo deles.
         </h3>
         <p className="mt-8 text-lg sm:text-xl" style={{ ...serif, color: "#a1a1a1", lineHeight: 1.55 }}>
