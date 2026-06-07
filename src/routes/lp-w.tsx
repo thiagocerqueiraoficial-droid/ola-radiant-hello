@@ -137,7 +137,7 @@ function HeroPhoto() {
           src={shadowTrader}
           alt="Estrategista em ambiente seguro"
           className="w-full h-auto block"
-          style={{ contrast: "1.1", brightness: "0.9" }}
+          style={{ filter: "contrast(1.1) brightness(0.9)" }}
           loading="eager"
         />
       </div>
