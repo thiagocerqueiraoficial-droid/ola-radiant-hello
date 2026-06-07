@@ -242,7 +242,7 @@ function Body() {
       </P>
       
       <P>
-        Atualmente, Castelli limita o número de parceiros para manter a eficácia da estratégia e evitar detecções em massa pelos algoritmos. O contato é feito exclusivamente via WhatsApp, onde ele explica o passo a passo da blindagem de conta e execução das entradas.
+        Atualmente, Castelli limita o número de parceiros para manter a eficácia da estratégia e evitar detecções em massa pelos algoritmos. O contato é feito exclusivamente via WhatsApp, onde ele explica o passo a passo da blindagem de conta e execução das entradas. Manda "CASTELLI" no meu whatsapp pessoal.
       </P>
 
       <HowItWorksBox />
