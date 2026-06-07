@@ -4,13 +4,13 @@ export const Route = createFileRoute("/cartaw")({
   component: Cartaw,
   head: () => ({
     meta: [
-      { title: "O Acordo de Castelli · Gabriel Castelli" },
+      { title: "O Acordo de Castelli · Gabriel Castelli⑇" },
       {
         name: "description",
         content:
           "Eu bati de frente com o sistema. Estudei os algoritmos, mapeei as manipulações de preço e encontrei a falha na blindagem deles.",
       },
-      { property: "og:title", content: "O Acordo de Castelli · Gabriel Castelli" },
+      { property: "og:title", content: "O Acordo de Castelli · Gabriel Castelli⑇" },
       {
         property: "og:description",
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/cartaw")({
   }),
 });
 
-const NOME_TRADER = "Gabriel Castelli";
+const NOME_TRADER = "Gabriel Castelli⑇";
 const LINK_WHATSAPP =
   "https://wa.me/5561982972677?text=ENTROU";
 const CTA_LABEL = "Enviar \"ENTROU\" para Castelli no WhatsApp ↓";
@@ -91,7 +91,7 @@ function Body() {
       </blockquote>
 
       <p className="mt-8">
-        Chame de alavancagem segura. Chame de parceria estratégica. Chame do que quiser. Mas eu, <strong style={{ fontWeight: 700 }}>Gabriel Castelli</strong>, desenvolvi um método que já extraiu mais de 5 milhões de reais das entranhas de gigantes como IQ Option, Olymp Trade, Binomo e Quotex. 
+        Chame de alavancagem segura. Chame de parceria estratégica. Chame do que quiser. Mas eu, <strong style={{ fontWeight: 700 }}>Gabriel Castelli⑇</strong>, desenvolvi um método que já extraiu mais de 5 milhões de reais das entranhas de gigantes como IQ Option, Olymp Trade, Binomo e Quotex. 
       </p>
 
       <p className="mt-6">
@@ -258,7 +258,7 @@ function Footer() {
         Aviso de Transparência · Este é um convite para uma parceria estratégica baseada em performance. Não garantimos lucros fixos. O mercado financeiro é soberano. Opere com consciência.
       </p>
       <div className="mt-8 pt-8 border-t border-rule max-w-[200px] mx-auto opacity-50">
-        © 2026 Gabriel Castelli
+        © 2026 Gabriel Castelli⑇
       </div>
     </footer>
   );
