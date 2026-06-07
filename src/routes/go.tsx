@@ -51,6 +51,45 @@ function DownloadCenter() {
     }
   };
 
+  const downloadAllZip = async () => {
+    setLoading("zip");
+    setStatus("Preparando pacote .zip...");
+    const zip = new JSZip();
+
+    try {
+      for (const p of PAGES) {
+        setStatus(`Processando: ${p.label}...`);
+        const url = `${window.location.origin}${p.path}`;
+        const res = await fetch(url);
+        let html = await res.text();
+
+        // Converte URLs relativas em absolutas
+        const base = window.location.origin;
+        html = html.replace(/(href|src)="\/(?!\/)/g, `$1="${base}/`);
+
+        zip.file(p.filename, html);
+      }
+
+      setStatus("Gerando arquivo .zip...");
+      const content = await zip.generateAsync({ type: "blob" });
+      const url = URL.createObjectURL(content);
+      
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "landing-pages-projeto.zip";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      setStatus("✓ Arquivo .zip baixado com sucesso!");
+    } catch (e) {
+      setStatus(`Erro ao criar ZIP: ${(e as Error).message}`);
+    } finally {
+      setLoading(null);
+    }
+  };
+
   const downloadAll = async () => {
     for (const p of PAGES) {
       await downloadPage(p.path, p.filename);
@@ -65,13 +104,23 @@ function DownloadCenter() {
         <h1 className="text-3xl sm:text-4xl font-bold mb-2">📥 Centro de Downloads</h1>
         <p className="text-zinc-400 mb-8 text-sm">Baixe o HTML completo de qualquer landing page do projeto.</p>
 
-        <button
-          onClick={downloadAll}
-          disabled={loading !== null}
-          className="w-full mb-6 px-6 py-4 bg-emerald-600 hover:bg-emerald-500 disabled:bg-zinc-700 font-bold rounded-lg transition-colors"
-        >
-          {loading ? "Baixando..." : "⬇ Baixar TODAS as páginas"}
-        </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <button
+            onClick={downloadAllZip}
+            disabled={loading !== null}
+            className="px-6 py-4 bg-emerald-600 hover:bg-emerald-500 disabled:bg-zinc-700 font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+          >
+            {loading === "zip" ? "📦 Compactando..." : "🎁 Baixar TUDO em .ZIP"}
+          </button>
+
+          <button
+            onClick={downloadAll}
+            disabled={loading !== null}
+            className="px-6 py-4 bg-zinc-800 hover:bg-zinc-700 disabled:bg-zinc-700 font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+          >
+            {loading === "all" ? "⬇ Baixando..." : "⬇ Baixar 1 por 1"}
+          </button>
+        </div>
 
         {status && (
           <div className="mb-6 p-3 bg-zinc-900 border border-zinc-700 rounded text-sm text-emerald-400">
