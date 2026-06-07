@@ -14,6 +14,7 @@ import { Route as Lp04RouteImport } from './routes/lp-04'
 import { Route as Lp03RouteImport } from './routes/lp-03'
 import { Route as Lp02RouteImport } from './routes/lp-02'
 import { Route as Lp01RouteImport } from './routes/lp-01'
+import { Route as GoRouteImport } from './routes/go'
 import { Route as CartaVipRouteImport } from './routes/carta-vip'
 import { Route as CartaCastelliRouteImport } from './routes/carta-castelli'
 import { Route as IndexRouteImport } from './routes/index'
@@ -43,6 +44,11 @@ const Lp01Route = Lp01RouteImport.update({
   path: '/lp-01',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GoRoute = GoRouteImport.update({
+  id: '/go',
+  path: '/go',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CartaVipRoute = CartaVipRouteImport.update({
   id: '/carta-vip',
   path: '/carta-vip',
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/carta-castelli': typeof CartaCastelliRoute
   '/carta-vip': typeof CartaVipRoute
+  '/go': typeof GoRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/carta-castelli': typeof CartaCastelliRoute
   '/carta-vip': typeof CartaVipRoute
+  '/go': typeof GoRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/carta-castelli': typeof CartaCastelliRoute
   '/carta-vip': typeof CartaVipRoute
+  '/go': typeof GoRoute
   '/lp-01': typeof Lp01Route
   '/lp-02': typeof Lp02Route
   '/lp-03': typeof Lp03Route
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carta-castelli'
     | '/carta-vip'
+    | '/go'
     | '/lp-01'
     | '/lp-02'
     | '/lp-03'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carta-castelli'
     | '/carta-vip'
+    | '/go'
     | '/lp-01'
     | '/lp-02'
     | '/lp-03'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/carta-castelli'
     | '/carta-vip'
+    | '/go'
     | '/lp-01'
     | '/lp-02'
     | '/lp-03'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CartaCastelliRoute: typeof CartaCastelliRoute
   CartaVipRoute: typeof CartaVipRoute
+  GoRoute: typeof GoRoute
   Lp01Route: typeof Lp01Route
   Lp02Route: typeof Lp02Route
   Lp03Route: typeof Lp03Route
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Lp01RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/go': {
+      id: '/go'
+      path: '/go'
+      fullPath: '/go'
+      preLoaderRoute: typeof GoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/carta-vip': {
       id: '/carta-vip'
       path: '/carta-vip'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CartaCastelliRoute: CartaCastelliRoute,
   CartaVipRoute: CartaVipRoute,
+  GoRoute: GoRoute,
   Lp01Route: Lp01Route,
   Lp02Route: Lp02Route,
   Lp03Route: Lp03Route,
@@ -208,3 +229,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
