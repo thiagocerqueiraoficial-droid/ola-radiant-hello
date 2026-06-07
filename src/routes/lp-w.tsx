@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import traderPhoto from "@/assets/trader-delucca-vip.png";
+import shadowTrader from "@/assets/shadow-trader.jpg";
 import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-w")({
@@ -132,17 +132,17 @@ function Byline() {
 function HeroPhoto() {
   return (
     <figure className="mx-auto max-w-[760px] px-5 mt-8 w-full">
-      <div className="overflow-hidden mx-auto" style={{ background: "#1a1a1a", maxWidth: 520 }}>
+      <div className="overflow-hidden mx-auto" style={{ background: "#000", maxWidth: 520 }}>
         <img
-          src={traderPhoto}
-          alt={`${NOME_TRADER} em sua estação de operações`}
+          src={shadowTrader}
+          alt="Estrategista em ambiente seguro"
           className="w-full h-auto block"
-          style={{ filter: "grayscale(0.85) contrast(1.05)", aspectRatio: "1 / 1", objectFit: "cover" }}
+          style={{ filter: "contrast(1.1) brightness(0.9)" }}
           loading="eager"
         />
       </div>
-      <figcaption className="mx-auto max-w-[520px] mt-3" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 14, lineHeight: 1.5 }}>
-        Castelli durante execução de estratégia de alavancagem. Foto: Arquivo Pessoal
+      <figcaption className="mx-auto max-w-[520px] mt-3" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 13, lineHeight: 1.5 }}>
+        Imagem obtida via fonte anônima. Por questões de segurança e retaliação de grandes corretoras, o estrategista mantém sua identidade visual sob sigilo.
       </figcaption>
     </figure>
   );
@@ -233,9 +233,12 @@ function Body() {
 
       <PullQuote />
 
-      <H2>A guerra contra os algoritmos</H2>
+      <H2>Identidade sob sigilo</H2>
       <P>
-        Castelli descreve sua atuação como uma "regra de guerra". Ele estuda as manipulações de preço e mapeia os pontos de ruptura onde as corretoras são mais vulneráveis. Segundo ele, é essa eficácia cirúrgica que causou seus múltiplos banimentos. "Elas me expulsam porque eu ganho. Elas não querem traders consistentes, querem vítimas."
+        Um dos pontos que mais chama a atenção no "fenômeno Castelli" é a sua ausência em eventos públicos ou redes sociais com exposição de rosto. Segundo fontes próximas, essa é uma medida de segurança vital. "As corretoras não querem apenas banir o Gabriel; elas querem silenciá-lo permanentemente para que o método não se espalhe", revela um ex-parceiro.
+      </P>
+      <P>
+        Castelli descreve sua atuação como uma "regra de guerra". Ele estuda as manipulações de preço e mapeia os pontos de ruptura onde as corretoras são mais vulneráveis. "Elas me perseguem porque eu ganho. Elas não querem traders consistentes, elas querem vítimas. Por isso, opero nas sombras, protegido pelo que elas mais temem: a discrição", afirma.
       </P>
       
       <P>
