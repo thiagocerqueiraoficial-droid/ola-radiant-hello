@@ -11,7 +11,7 @@ export const Route = createFileRoute("/lp-w")({
       {
         name: "description",
         content:
-          "Gabriel Castelli abre modelo de parceria onde assume o risco: dobra o capital na conta do cliente antes de qualquer pagamento.",
+          "Gabriel Castelli⑇ abre modelo de parceria onde assume o risco: dobra o capital na conta do cliente antes de qualquer pagamento.",
       },
       { property: "og:title", content: "Estrategista financeiro revela método de 'Ruptura' · Mercado em Foco" },
       {
@@ -103,7 +103,7 @@ function Headline() {
 function Dek() {
   return (
     <p className="mx-auto max-w-[760px] mt-6" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 21, lineHeight: 1.45 }}>
-      Gabriel Castelli, operador que já extraiu mais de R$ 5 milhões de grandes corretoras, apresenta modelo de parceria focado em performance absoluta e risco financeiro blindado.
+      Gabriel Castelli⑇, operador que já extraiu mais de R$ 5 milhões de grandes corretoras, apresenta modelo de parceria focado em performance absoluta e risco financeiro blindado.
     </p>
   );
 }
