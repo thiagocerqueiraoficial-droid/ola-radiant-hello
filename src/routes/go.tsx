@@ -1,55 +1,118 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 export const Route = createFileRoute("/go")({
   component: DownloadCenter,
 });
 
+const PAGES = [
+  { path: "/", label: "Home (Carta Alpha Academy)", filename: "home.html" },
+  { path: "/carta-vip", label: "Carta VIP", filename: "carta-vip.html" },
+  { path: "/cartaw", label: "Carta Castelli (Acordo)", filename: "carta-castelli.html" },
+  { path: "/lp-01", label: "LP 01", filename: "lp-01.html" },
+  { path: "/lp-02", label: "LP 02", filename: "lp-02.html" },
+  { path: "/lp-03", label: "LP 03", filename: "lp-03.html" },
+  { path: "/lp-04", label: "LP 04", filename: "lp-04.html" },
+  { path: "/lp-04-vip", label: "LP 04 VIP", filename: "lp-04-vip.html" },
+  { path: "/lp-w", label: "LP Notícia Castelli", filename: "lp-noticia-castelli.html" },
+];
+
 function DownloadCenter() {
-  const handleDownload = (filename: string) => {
-    const link = document.createElement("a");
-    link.href = `/${filename}`;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const [loading, setLoading] = useState<string | null>(null);
+  const [status, setStatus] = useState<string>("");
+
+  const downloadPage = async (path: string, filename: string) => {
+    setLoading(path);
+    setStatus("");
+    try {
+      const url = `${window.location.origin}${path}`;
+      const res = await fetch(url);
+      let html = await res.text();
+
+      // Converte URLs relativas em absolutas para o HTML funcionar standalone
+      const base = window.location.origin;
+      html = html.replace(/(href|src)="\/(?!\/)/g, `$1="${base}/`);
+
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = blobUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(blobUrl);
+      setStatus(`✓ ${filename} baixado!`);
+    } catch (e) {
+      setStatus(`Erro ao baixar ${filename}: ${(e as Error).message}`);
+    } finally {
+      setLoading(null);
+    }
+  };
+
+  const downloadAll = async () => {
+    for (const p of PAGES) {
+      await downloadPage(p.path, p.filename);
+      await new Promise((r) => setTimeout(r, 400));
+    }
+    setStatus("✓ Todas as páginas foram baixadas!");
   };
 
   return (
-    <div className="min-h-screen bg-[#fafaf7] flex flex-col items-center justify-center p-6 font-sans">
-      <div className="max-w-md w-full bg-white border border-[#d8d3c4] p-8 shadow-sm rounded-lg">
-        <h1 className="text-2xl font-bold text-[#1a1a1a] mb-2 text-center">Centro de Downloads</h1>
-        <p className="text-[#55554f] text-sm mb-8 text-center">Clique nos botões abaixo para baixar os arquivos HTML das suas LPs.</p>
-        
-        <div className="space-y-4">
-          <button
-            onClick={() => handleDownload('pagina-noticia.html')}
-            className="w-full flex items-center justify-between px-6 py-4 bg-[#0f3b2e] text-white font-semibold rounded-md hover:bg-[#0a2a21] transition-colors shadow-sm group"
-          >
-            <span>Baixar Página de Notícia</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-          </button>
+    <div className="min-h-screen bg-[#0f0f0f] text-white p-6 sm:p-10" style={{ fontFamily: "system-ui, sans-serif" }}>
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2">📥 Centro de Downloads</h1>
+        <p className="text-zinc-400 mb-8 text-sm">Baixe o HTML completo de qualquer landing page do projeto.</p>
 
-          <button
-            onClick={() => handleDownload('pagina-acordo.html')}
-            className="w-full flex items-center justify-between px-6 py-4 bg-[#9c2310] text-white font-semibold rounded-md hover:bg-[#7a1c0d] transition-colors shadow-sm group"
-          >
-            <span>Baixar Página do Acordo</span>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 transform group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-          </button>
+        <button
+          onClick={downloadAll}
+          disabled={loading !== null}
+          className="w-full mb-6 px-6 py-4 bg-emerald-600 hover:bg-emerald-500 disabled:bg-zinc-700 font-bold rounded-lg transition-colors"
+        >
+          {loading ? "Baixando..." : "⬇ Baixar TODAS as páginas"}
+        </button>
+
+        {status && (
+          <div className="mb-6 p-3 bg-zinc-900 border border-zinc-700 rounded text-sm text-emerald-400">
+            {status}
+          </div>
+        )}
+
+        <div className="space-y-2">
+          {PAGES.map((p) => (
+            <div
+              key={p.path}
+              className="flex items-center justify-between p-4 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-zinc-700 transition-colors"
+            >
+              <div>
+                <div className="font-semibold">{p.label}</div>
+                <div className="text-xs text-zinc-500 font-mono">{p.path}</div>
+              </div>
+              <div className="flex gap-2">
+                <a
+                  href={p.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-xs bg-zinc-800 hover:bg-zinc-700 rounded transition-colors"
+                >
+                  Ver
+                </a>
+                <button
+                  onClick={() => downloadPage(p.path, p.filename)}
+                  disabled={loading === p.path}
+                  className="px-4 py-2 text-xs bg-blue-600 hover:bg-blue-500 disabled:bg-zinc-700 font-semibold rounded transition-colors"
+                >
+                  {loading === p.path ? "..." : "⬇ Baixar"}
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-10 p-4 bg-[#f0ede4] rounded-md border border-[#d8d3c4]">
-          <p className="text-xs text-[#55554f] leading-relaxed">
-            <strong>Instrução:</strong> Se o download automático não iniciar, a página abrirá em uma nova aba. Lá, basta apertar <code className="bg-white px-1 border rounded">Ctrl + S</code> para salvar.
-          </p>
-        </div>
+        <p className="mt-8 text-xs text-zinc-600">
+          Dica: o HTML baixado já vem com todos os links e imagens convertidos para URLs absolutas, então pode ser aberto/hospedado em qualquer lugar.
+        </p>
       </div>
-      
-      <a href="/" className="mt-6 text-[#55554f] text-sm hover:underline">Voltar para a Home</a>
     </div>
   );
 }
