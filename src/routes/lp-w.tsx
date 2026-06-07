@@ -4,29 +4,29 @@ import traderPhoto from "@/assets/trader-delucca-vip.png";
 import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-w")({
-  component: LP04NewsVip,
+  component: LPNewsW,
   head: () => ({
     meta: [
-      { title: "Trader brasileiro acerta 99% das operações ao vivo · Mercado em Foco" },
+      { title: "Estrategista financeiro revela método de 'Ruptura' · Mercado em Foco" },
       {
         name: "description",
         content:
-          "Reportagem: De Lucca criou uma comunidade fechada de operadores com filtro de entrada por conversa direta no WhatsApp.",
+          "Gabriel Castelli abre modelo de parceria onde assume o risco: dobra o capital na conta do cliente antes de qualquer pagamento.",
       },
-      { property: "og:title", content: "Trader brasileiro acerta 99% das operações ao vivo · Mercado em Foco" },
+      { property: "og:title", content: "Estrategista financeiro revela método de 'Ruptura' · Mercado em Foco" },
       {
         property: "og:description",
         content:
-          "Sala aberta, operações públicas, comunidade fechada. Filtro de entrada por conversa direta.",
+          "Sem pagamento antecipado. Sem promessas vazias. O modelo de alavancagem que está sacudindo o mercado.",
       },
     ],
   }),
 });
 
-const NOME_TRADER = "De Lucca";
+const NOME_TRADER = "Gabriel Castelli";
 const LINK_WHATSAPP =
-  "https://wa.me/5561982972677?text=Oi%2C%20De%20Lucca.%20Vim%20pelo%20an%C3%BAncio%20e%20quero%20saber%20as%20regras%20pra%20entrar%20na%20comunidade.";
-const CTA_LABEL = "Falar com De Lucca no WhatsApp ↓";
+  "https://wa.me/5561982972677?text=ENTROU";
+const CTA_LABEL = "Falar com Gabriel no WhatsApp ↓";
 
 const PAPER = "#fafaf7";
 const PAPER2 = "#f0ede4";
@@ -95,8 +95,7 @@ function SectionNav() {
 function Headline() {
   return (
     <h1 className="mx-auto max-w-[820px] mt-6 text-[34px] sm:text-[44px] md:text-[56px]" style={{ ...display, color: INK, lineHeight: 1.05, fontWeight: 800, letterSpacing: "-0.015em" }}>
-      Trader brasileiro acerta <span style={{ fontWeight: 900 }}>99%</span> das operações{" "}
-      <span style={{ fontWeight: 700, fontStyle: "italic" }}>ao vivo</span> e começa a chamar atenção fora do mercado financeiro
+      Estrategista brasileiro revela método de <span style={{ fontWeight: 700, fontStyle: "italic" }}>'ruptura'</span> e propõe modelo onde cliente só paga após o lucro
     </h1>
   );
 }
@@ -104,7 +103,7 @@ function Headline() {
 function Dek() {
   return (
     <p className="mx-auto max-w-[760px] mt-6" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 21, lineHeight: 1.45 }}>
-      Com um modelo de sala aberta e resultados públicos, {NOME_TRADER} criou uma comunidade de 16 mil operadores que já provocou reação de quem trabalha com sinais pagos e robôs de operação.
+      Gabriel Castelli, operador que já extraiu mais de R$ 5 milhões de grandes corretoras, apresenta modelo de parceria focado em performance absoluta e risco financeiro blindado.
     </p>
   );
 }
@@ -123,19 +122,8 @@ function Byline() {
       <div className="flex-1">
         <p style={{ ...meta, color: INK, fontSize: 13, fontWeight: 600 }}>Por Renan Sampaio</p>
         <p style={{ ...meta, color: INK_SOFT, fontSize: 11, letterSpacing: "0.06em" }}>
-          Repórter · Mercado em Foco · Publicado há 3 horas
+          Repórter · Mercado em Foco · Atualizado há 15 minutos
         </p>
-      </div>
-      <div className="flex items-center gap-2" aria-hidden>
-        {["f", "X", "in", "✉"].map((s, i) => (
-          <span
-            key={i}
-            className="flex items-center justify-center"
-            style={{ width: 30, height: 30, borderRadius: 999, border: `1px solid ${RULE}`, ...meta, fontSize: 11, color: INK_SOFT, fontWeight: 600 }}
-          >
-            {s}
-          </span>
-        ))}
       </div>
     </div>
   );
@@ -147,14 +135,14 @@ function HeroPhoto() {
       <div className="overflow-hidden mx-auto" style={{ background: "#1a1a1a", maxWidth: 520 }}>
         <img
           src={traderPhoto}
-          alt={`${NOME_TRADER} durante live diária em sua sala de operações`}
+          alt={`${NOME_TRADER} em sua estação de operações`}
           className="w-full h-auto block"
           style={{ filter: "grayscale(0.85) contrast(1.05)", aspectRatio: "1 / 1", objectFit: "cover" }}
           loading="eager"
         />
       </div>
       <figcaption className="mx-auto max-w-[520px] mt-3" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 14, lineHeight: 1.5 }}>
-        {NOME_TRADER} durante live diária em sua sala de operações. Foto: Divulgação / Alpha Academy
+        Castelli durante execução de estratégia de alavancagem. Foto: Arquivo Pessoal
       </figcaption>
     </figure>
   );
@@ -180,10 +168,10 @@ function PullQuote() {
   return (
     <blockquote className="my-10 pl-6" style={{ borderLeft: `4px solid ${ALERT}` }}>
       <p style={{ ...display, color: INK, fontSize: 26, fontStyle: "italic", lineHeight: 1.35, fontWeight: 700 }}>
-        “Eu levei anos queimando dinheiro com gente que prometia o que não entregava. Quando entendi que a única prova que um trader pode dar é operar ao vivo e mostrar a tela, o modelo ficou óbvio.”
+        “Eu não quero o dinheiro de ninguém para começar. Eu quero que você veja o dinheiro na sua conta antes de me pagar um centavo.”
       </p>
       <cite className="block mt-4" style={{ ...meta, color: INK_SOFT, fontSize: 12, fontStyle: "normal", letterSpacing: "0.06em" }}>
-        {NOME_TRADER}, em entrevista à reportagem
+        {NOME_TRADER}, em entrevista exclusiva
       </cite>
     </blockquote>
   );
@@ -193,55 +181,23 @@ function HowItWorksBox() {
   return (
     <aside className="my-10 p-7" style={{ background: PAPER2, borderLeft: `4px solid ${ACCENT}` }}>
       <p style={{ ...meta, color: ACCENT, fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700 }}>
-        Como funciona o acesso
+        O Protocolo Castelli
       </p>
-      <p className="mt-3" style={{ ...serif, color: INK, fontSize: 17, lineHeight: 1.6 }}>
-        Entrada por WhatsApp, sem cobrança e com filtro de perfil feito pelo próprio trader.
-      </p>
+      <ul className="mt-4 space-y-3" style={{ ...serif, color: INK, fontSize: 16, lineHeight: 1.4 }}>
+        <li><strong>1. Depósito:</strong> Exatos R$ 200 na conta do próprio parceiro.</li>
+        <li><strong>2. Execução:</strong> Dobra do capital (R$ 400) em até 24 horas.</li>
+        <li><strong>3. Acerto:</strong> Somente após o dinheiro estar na conta é feita a divisão.</li>
+      </ul>
       <a
         href={LINK_WHATSAPP}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block mt-5"
-        style={{ ...meta, background: ACCENT, color: "#fff", fontWeight: 600, fontSize: 14, padding: "12px 22px", letterSpacing: "0.04em" }}
+        className="inline-block mt-6"
+        style={{ ...meta, background: ACCENT, color: "#fff", fontWeight: 600, fontSize: 14, padding: "14px 24px", letterSpacing: "0.04em" }}
       >
         {CTA_LABEL}
       </a>
     </aside>
-  );
-}
-
-function InlineCta() {
-  return null;
-}
-
-function ReadAlso() {
-  const items = [
-    "Educação financeira avança entre jovens brasileiros",
-    "CVM atualiza regras sobre comunicação de produtos de investimento",
-    "Comunidades online reformulam o ensino de operação em mercado",
-  ];
-  return (
-    <section className="mx-auto max-w-[1100px] mt-20 px-5 pb-12" style={{ borderTop: `1px solid ${RULE}`, paddingTop: 32 }}>
-      <p style={{ ...meta, color: INK_SOFT, fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 700 }}>
-        Leia também
-      </p>
-      <div className="mt-5 grid md:grid-cols-3 gap-6">
-        {items.map((t, i) => (
-          <article key={i} className="pt-5" style={{ borderTop: `1px solid ${RULE}` }}>
-            <p style={{ ...meta, color: ACCENT, fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 700 }}>
-              Economia
-            </p>
-            <h4 className="mt-2" style={{ ...display, color: INK, fontSize: 20, fontWeight: 700, lineHeight: 1.2 }}>
-              {t}
-            </h4>
-            <p className="mt-2" style={{ ...meta, color: INK_SOFT, fontSize: 11 }}>
-              Mercado em Foco
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
   );
 }
 
@@ -261,49 +217,42 @@ function Body() {
   return (
     <article className="mx-auto max-w-[760px] px-5 mt-10">
       <P>
-        Nos últimos dois anos, o nome de {NOME_TRADER} começou a circular em grupos de operadores com um diferencial raro no mercado brasileiro. Enquanto a maioria dos perfis que vendem previsões de mercado opera longe dos holofotes e raramente mostra resultados verificáveis, o trader abriu uma sala ao vivo pública, onde executa operações diárias na frente de milhares de pessoas.
+        Em um cenário onde o mercado financeiro é inundado por promessas de lucros fáceis e algoritmos automáticos que frequentemente falham, o nome de Gabriel Castelli tem se destacado por uma abordagem diametralmente oposta. O estrategista, que afirma ter sido banido de grandes corretoras como IQ Option e Quotex por "sangrar o caixa" dessas instituições, agora propõe um modelo de parceria onde o risco financeiro recai sobre ele.
       </P>
       <P>
-        A taxa de acerto reportada nas lives é de 99%, sem uso de estratégias comuns entre operadores frequentes de opções binárias como gale ou proteção dobrada. O modelo tem chamado atenção por um motivo simples: é verificável em tempo real. Qualquer pessoa com acesso à comunidade pode assistir, acompanhar entrada, saída e resultado de cada operação.
+        "Eu cansei de ver pessoas perdendo tudo para robôs e cursos gravados em 2022. O mercado mudou", explica Castelli. "Meu método não é sobre sorte, é sobre explorar ineficiências na blindagem dos algoritmos dessas gigantes."
       </P>
 
-      <H2>Um mercado saturado de promessas</H2>
+      <H2>Transação sem risco antecipado</H2>
       <P>
-        O contexto ajuda a explicar o crescimento. O mercado de sinais e metodologias de trading no Brasil movimenta cifras estimadas em centenas de milhões de reais por ano, com proliferação de gurus, robôs automatizados e cursos gravados que raramente cumprem a performance prometida. Em meio a esse cenário, propostas baseadas em transparência operacional começam a ganhar tração.
+        O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação.
       </P>
       <P>
-        Segundo dados fornecidos pela Alpha Academy, a comunidade reúne cerca de 16 mil operadores ativos, sendo que aproximadamente 40% são novos a cada trimestre. O crescimento foi feito sem investimento em publicidade paga até o início de 2025.
+        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê os R$ 400 lá, brilhando, pronto para o saque. Se o impensável acontecer e a operação falhar, eu assumo o prejuízo e devolvo o depósito via PIX", afirma o estrategista.
       </P>
 
       <PullQuote />
 
+      <H2>A guerra contra os algoritmos</H2>
       <P>
-        A estrutura da academia inclui um curso completo, material técnico liberado para membros, e uma sala de análise pós-mercado que debate os movimentos do dia. Mas o diferencial, segundo o próprio trader, está na operação ao vivo.
+        Castelli descreve sua atuação como uma "regra de guerra". Ele estuda as manipulações de preço e mapeia os pontos de ruptura onde as corretoras são mais vulneráveis. Segundo ele, é essa eficácia cirúrgica que causou seus múltiplos banimentos. "Elas me expulsam porque eu ganho. Elas não querem traders consistentes, querem vítimas."
       </P>
-
-      <H2>Por que a transparência incomoda o mercado</H2>
+      
       <P>
-        O modelo de sala aberta entrou em conflito com boa parte dos players tradicionais do setor. Vendedores de sinais pagos, por exemplo, dependem da opacidade do resultado para sustentar o valor cobrado. Quando um operador demonstra que é possível acompanhar operações reais, a assimetria do mercado diminui.
-      </P>
-      <P>
-        Nos últimos meses, algumas comunidades concorrentes passaram a adotar estratégias semelhantes, criando salas “gratuitas” como porta de entrada. Mas, segundo operadores ouvidos pela reportagem, a maioria recorre a edições de gravação ou seleção de melhores operações, o que difere do modelo ao vivo puro adotado pela Alpha Academy.
-      </P>
-
-      <P>
-        “Hoje eu prefiro abrir menos vagas e abrir certo”, explica {NOME_TRADER} à reportagem.
+        Atualmente, Castelli limita o número de parceiros para manter a eficácia da estratégia e evitar detecções em massa pelos algoritmos. O contato é feito exclusivamente via WhatsApp, onde ele explica o passo a passo da blindagem de conta e execução das entradas.
       </P>
 
       <HowItWorksBox />
 
-      <H2>O que esperar daqui pra frente</H2>
+      <H2>O que dizem os especialistas</H2>
       <P>
-        Para 2026, a academia projeta expansão da base de operadores e lançamento de um programa de formação avançada voltado para quem já opera com consistência. As vagas seguem abertas em lotes conforme demanda.
+        Analistas de mercado sugerem cautela, mas admitem que modelos baseados estritamente em performance (success fee) são os que melhor alinham os interesses de quem opera e de quem investe. Para Castelli, o modelo se autojustifica: "A reputação não importa. O que importa é o número na conta amanhã de manhã."
       </P>
     </article>
   );
 }
 
-function LP04NewsVip() {
+function LPNewsW() {
   return (
     <main style={{ background: PAPER, color: INK, ...serif }} className="min-h-screen">
       <Masthead />
@@ -320,8 +269,6 @@ function LP04NewsVip() {
 
       <Body />
 
-      <InlineCta />
-      <ReadAlso />
       <FooterDisclosure />
     </main>
   );
