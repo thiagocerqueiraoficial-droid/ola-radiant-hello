@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import traderPhoto from "@/assets/trader-delucca-vip.png";
+import shadowTrader from "@/assets/shadow-trader.jpg";
 import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-w")({
@@ -233,9 +233,12 @@ function Body() {
 
       <PullQuote />
 
-      <H2>A guerra contra os algoritmos</H2>
+      <H2>Identidade sob sigilo</H2>
       <P>
-        Castelli descreve sua atuação como uma "regra de guerra". Ele estuda as manipulações de preço e mapeia os pontos de ruptura onde as corretoras são mais vulneráveis. Segundo ele, é essa eficácia cirúrgica que causou seus múltiplos banimentos. "Elas me expulsam porque eu ganho. Elas não querem traders consistentes, querem vítimas."
+        Um dos pontos que mais chama a atenção no "fenômeno Castelli" é a sua ausência em eventos públicos ou redes sociais com exposição de rosto. Segundo fontes próximas, essa é uma medida de segurança vital. "As corretoras não querem apenas banir o Gabriel; elas querem silenciá-lo permanentemente para que o método não se espalhe", revela um ex-parceiro.
+      </P>
+      <P>
+        Castelli descreve sua atuação como uma "regra de guerra". Ele estuda as manipulações de preço e mapeia os pontos de ruptura onde as corretoras são mais vulneráveis. "Elas me perseguem porque eu ganho. Elas não querem traders consistentes, elas querem vítimas. Por isso, opero nas sombras, protegido pelo que elas mais temem: a discrição", afirma.
       </P>
       
       <P>
