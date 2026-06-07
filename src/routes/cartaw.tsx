@@ -264,7 +264,7 @@ function Footer() {
   );
 }
 
-function cartaw() {
+function CartaCastelli() {
   return (
     <main
       style={{
