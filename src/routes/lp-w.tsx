@@ -184,9 +184,9 @@ function HowItWorksBox() {
         O Protocolo Castelli
       </p>
       <ul className="mt-4 space-y-3" style={{ ...serif, color: INK, fontSize: 16, lineHeight: 1.4 }}>
-        <li><strong>1. Depósito:</strong> Exatos R$ 200 na conta do próprio parceiro.</li>
-        <li><strong>2. Execução:</strong> Dobra do capital (R$ 400) em até 24 horas.</li>
-        <li><strong>3. Acerto:</strong> Somente após o dinheiro estar na conta é feita a divisão.</li>
+        <li><strong>1. Contato:</strong> Você me chama no WhatsApp e diz "ENTROU".</li>
+        <li><strong>2. Execução:</strong> Eu dobro seu capital na sua própria conta em até 24 horas.</li>
+        <li><strong>3. Acerto:</strong> Você só me paga a minha parte depois que o lucro estiver na sua mão.</li>
       </ul>
       <a
         href={LINK_WHATSAPP}
@@ -228,7 +228,7 @@ function Body() {
         O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação.
       </P>
       <P>
-        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê os R$ 400 lá, brilhando, pronto para o saque. Se o impensável acontecer e a operação falhar, eu assumo o prejuízo e devolvo o depósito via PIX", afirma o estrategista.
+        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê o dinheiro lá, pronto para o saque. Se o impensável acontecer e a operação falhar, o acordo é claro: eu te envio o PIX dos 200 reais de volta", afirma o estrategista.
       </P>
 
       <PullQuote />
