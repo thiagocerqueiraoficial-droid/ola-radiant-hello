@@ -225,10 +225,10 @@ function Body() {
 
       <H2>Transação sem risco antecipado</H2>
       <P>
-        O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação.
+        O grande diferencial do modelo Castelli é a inversão do fluxo de pagamento. Ao contrário de gurus que cobram taxas de entrada ou mensalidades, Gabriel propõe uma transação onde o parceiro cria sua própria conta, faz um depósito controlado de R$ 200 e ele executa a operação. "Você não me paga nada agora. Eu não quero o seu dinheiro. Você vai criar a sua conta e depositar", explica.
       </P>
       <P>
-        O objetivo é claro: dobrar o valor em 24 horas. "Eu só recebo minha parte depois que o parceiro vê o dinheiro lá, pronto para o saque. Se o impensável acontecer e a operação falhar, o acordo é claro: eu te envio o PIX dos 200 reais de volta", afirma o estrategista.
+        O objetivo é claro: dobrar o valor em 24 horas. "Eu entro, dobro, e só depois que você vê o dinheiro na conta, dobrado, você me paga. Se o impensável acontecer e a operação falhar, o acordo é claro como vidro: eu te envio o PIX dos 200 reais de volta", afirma o estrategista.
       </P>
 
       <PullQuote />
