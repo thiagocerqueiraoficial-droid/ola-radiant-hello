@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import JSZip from "jszip";
 
 export const Route = createFileRoute("/go")({
   component: DownloadCenter,
