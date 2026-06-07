@@ -168,7 +168,7 @@ function PullQuote() {
   return (
     <blockquote className="my-10 pl-6" style={{ borderLeft: `4px solid ${ALERT}` }}>
       <p style={{ ...display, color: INK, fontSize: 26, fontStyle: "italic", lineHeight: 1.35, fontWeight: 700 }}>
-        “Eu não quero o dinheiro de ninguém para começar. Eu quero que você veja o dinheiro na sua conta antes de me pagar um centavo.”
+        “Eu não quero o seu dinheiro agora. Você cria sua conta e deposita. Eu entro, dobro, e só depois que você vir o dinheiro dobrado, você me paga.”
       </p>
       <cite className="block mt-4" style={{ ...meta, color: INK_SOFT, fontSize: 12, fontStyle: "normal", letterSpacing: "0.06em" }}>
         {NOME_TRADER}, em entrevista exclusiva
