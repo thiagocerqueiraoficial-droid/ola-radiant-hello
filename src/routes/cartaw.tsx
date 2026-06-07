@@ -168,7 +168,7 @@ function Body() {
       </p>
 
       <p className="mt-8 font-bold text-2xl" style={{ color: ACCENT }}>
-        A hora de teorizar acabou. Abra sua conta agora. Deposite os 200 reais. Me mande o print do depósito.
+        A hora de teorizar acabou. Me chama agora no WhatsApp e diz "ENTROU". Eu vou te explicar como a gente começa.
       </p>
 
       <p className="mt-8">
