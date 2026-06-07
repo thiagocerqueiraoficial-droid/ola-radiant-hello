@@ -243,6 +243,9 @@ function Body() {
       <P>
         Castelli descreve sua atuação como uma "regra de guerra". Ele estuda as manipulações de preço e mapeia os pontos de ruptura onde as corretoras são mais vulneráveis. "Elas me perseguem porque eu ganho. Elas não querem traders consistentes, elas querem vítimas. Por isso, opero nas sombras, protegido pelo que elas mais temem: a discrição", afirma.
       </P>
+      <P>
+        Ele ainda completa: "Isso não é critério de decisão... até porque está cheio de bandido nesse mercado mostrando o rosto para passar credibilidade falsa. O que gera confiança de verdade é dinheiro no bolso, e é isso que eu entrego antes de pedir qualquer coisa."
+      </P>
       
       <P>
         Atualmente, Castelli limita o número de parceiros para manter a eficácia da estratégia e evitar detecções em massa pelos algoritmos. O contato é feito exclusivamente via WhatsApp, onde ele explica o passo a passo da blindagem de conta e execução das entradas. Manda "CASTELLI" no meu whatsapp pessoal.
