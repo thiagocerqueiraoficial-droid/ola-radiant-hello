@@ -132,17 +132,17 @@ function Byline() {
 function HeroPhoto() {
   return (
     <figure className="mx-auto max-w-[760px] px-5 mt-8 w-full">
-      <div className="overflow-hidden mx-auto" style={{ background: "#1a1a1a", maxWidth: 520 }}>
+      <div className="overflow-hidden mx-auto" style={{ background: "#000", maxWidth: 520 }}>
         <img
-          src={traderPhoto}
-          alt={`${NOME_TRADER} em sua estação de operações`}
+          src={shadowTrader}
+          alt="Estrategista em ambiente seguro"
           className="w-full h-auto block"
-          style={{ filter: "grayscale(0.85) contrast(1.05)", aspectRatio: "1 / 1", objectFit: "cover" }}
+          style={{ contrast: "1.1", brightness: "0.9" }}
           loading="eager"
         />
       </div>
-      <figcaption className="mx-auto max-w-[520px] mt-3" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 14, lineHeight: 1.5 }}>
-        Castelli durante execução de estratégia de alavancagem. Foto: Arquivo Pessoal
+      <figcaption className="mx-auto max-w-[520px] mt-3" style={{ ...serif, fontStyle: "italic", color: INK_SOFT, fontSize: 13, lineHeight: 1.5 }}>
+        Imagem obtida via fonte anônima. Por questões de segurança e retaliação de grandes corretoras, o estrategista mantém sua identidade visual sob sigilo.
       </figcaption>
     </figure>
   );
