@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as LpWRouteImport } from './routes/lp-w'
 import { Route as Lp04VipRouteImport } from './routes/lp-04-vip'
 import { Route as Lp04RouteImport } from './routes/lp-04'
 import { Route as Lp03RouteImport } from './routes/lp-03'
@@ -19,6 +20,11 @@ import { Route as CartawRouteImport } from './routes/cartaw'
 import { Route as CartaVipRouteImport } from './routes/carta-vip'
 import { Route as IndexRouteImport } from './routes/index'
 
+const LpWRoute = LpWRouteImport.update({
+  id: '/lp-w',
+  path: '/lp-w',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Lp04VipRoute = Lp04VipRouteImport.update({
   id: '/lp-04-vip',
   path: '/lp-04-vip',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/lp-03': typeof Lp03Route
   '/lp-04': typeof Lp04Route
   '/lp-04-vip': typeof Lp04VipRoute
+  '/lp-w': typeof LpWRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/lp-03': typeof Lp03Route
   '/lp-04': typeof Lp04Route
   '/lp-04-vip': typeof Lp04VipRoute
+  '/lp-w': typeof LpWRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/lp-03': typeof Lp03Route
   '/lp-04': typeof Lp04Route
   '/lp-04-vip': typeof Lp04VipRoute
+  '/lp-w': typeof LpWRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/lp-03'
     | '/lp-04'
     | '/lp-04-vip'
+    | '/lp-w'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/lp-03'
     | '/lp-04'
     | '/lp-04-vip'
+    | '/lp-w'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/lp-03'
     | '/lp-04'
     | '/lp-04-vip'
+    | '/lp-w'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,10 +157,18 @@ export interface RootRouteChildren {
   Lp03Route: typeof Lp03Route
   Lp04Route: typeof Lp04Route
   Lp04VipRoute: typeof Lp04VipRoute
+  LpWRoute: typeof LpWRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/lp-w': {
+      id: '/lp-w'
+      path: '/lp-w'
+      fullPath: '/lp-w'
+      preLoaderRoute: typeof LpWRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lp-04-vip': {
       id: '/lp-04-vip'
       path: '/lp-04-vip'
@@ -225,7 +245,17 @@ const rootRouteChildren: RootRouteChildren = {
   Lp03Route: Lp03Route,
   Lp04Route: Lp04Route,
   Lp04VipRoute: Lp04VipRoute,
+  LpWRoute: LpWRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
