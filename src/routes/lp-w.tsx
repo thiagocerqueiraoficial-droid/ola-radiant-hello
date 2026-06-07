@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import shadowTrader from "@/assets/gabriel-castelli-new.jpg";
+import shadowTrader from "@/assets/gabriel-castelli-final.jpg";
 import renanPhoto from "@/assets/renan-sampaio.jpg";
 
 export const Route = createFileRoute("/lp-w")({
