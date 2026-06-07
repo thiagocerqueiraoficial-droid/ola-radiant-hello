@@ -159,7 +159,7 @@ function Body() {
           BLINDAGEM TOTAL
         </span>
         <p style={{ ...serif, fontSize: "19px", lineHeight: 1.6 }}>
-          Se, por algum motivo cósmico ou falha técnica impossível, a operação der errado, o acordo é claro como vidro: <strong style={{ fontWeight: 700 }}>eu envio o PIX dos 200 reais de volta.</strong> Parece loucura? Talvez. Mas eu assumo o risco financeiro total. Eu coloco meu capital e minha reputação na linha de frente para que você possa operar seguro.
+          Se, por algum motivo cósmico ou falha técnica impossível, a operação der errado, o acordo é claro como vidro: <strong style={{ fontWeight: 700 }}>eu envio seus 200 reais de volta.</strong> Parece loucura? Talvez. Mas eu assumo o risco financeiro total. Eu coloco meu capital e minha reputação na linha de frente para que você possa operar seguro.
         </p>
       </div>
 
