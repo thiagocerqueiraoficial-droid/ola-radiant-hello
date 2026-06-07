@@ -187,9 +187,9 @@ function HowItWorksBox() {
         O Protocolo Castelli
       </p>
       <ul className="mt-4 space-y-3" style={{ ...serif, color: INK, fontSize: 16, lineHeight: 1.4 }}>
-        <li><strong>1. Contato:</strong> Você me chama no WhatsApp e diz "CASTELLI".</li>
-        <li><strong>2. Execução:</strong> Você cria sua conta e deposita. Eu entro e dobro seu capital em até 24 horas.</li>
-        <li><strong>3. Acerto:</strong> Só depois que você vê o dinheiro dobrado na conta, você me paga a minha parte.</li>
+        <li><strong>1. Contato:</strong> Você chama o Gabriel Castelli no WhatsApp e diz "CASTELLI".</li>
+        <li><strong>2. Execução:</strong> Ele te passa todas as informações e dobra a sua banca.</li>
+        <li><strong>3. Acerto:</strong> Quando você vê o dinheiro dobrado e sacar, você envia a parte do Castelli.</li>
       </ul>
       <a
         href={LINK_WHATSAPP}
