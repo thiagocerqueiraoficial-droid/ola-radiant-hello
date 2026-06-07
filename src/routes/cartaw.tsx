@@ -111,7 +111,7 @@ function Body() {
       </p>
 
       <p className="mt-6">
-        Eu não estou aqui para pedir sua fé. Estou aqui para oferecer uma transação. Minha reputação não vale nada para você agora. O que vale é o número que vai aparecer na sua conta bancária amanhã de manhã.
+        Eu não quero o seu dinheiro agora. Eu não estou aqui para pedir sua fé ou um pagamento antecipado. Estou aqui para oferecer uma transação onde eu assumo o fardo da prova. Você cria sua conta, você faz o seu depósito, e eu executo. Só depois que você ver o dinheiro dobrado na sua conta, disponível para saque, é que a gente acerta a minha parte. Minha reputação não vale nada para você agora — o que vale é o saldo que você vai enxergar com seus próprios olhos amanhã.
       </p>
 
       <h2 className="mt-20 mb-6" style={{ ...serif, fontWeight: 800, fontSize: "32px", lineHeight: 1.15, letterSpacing: "-0.01em" }}>
