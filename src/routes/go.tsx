@@ -30,11 +30,45 @@ function DownloadCenter() {
       const res = await fetch(url);
       let html = await res.text();
 
-      // Converte URLs relativas em absolutas para o HTML funcionar standalone
-      const base = window.location.origin;
-      html = html.replace(/(href|src)="\/(?!\/)/g, `$1="${base}/`);
+      // Pega os links de CSS e fontes do próprio HTML original (via DOM parser para ser robusto)
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, "text/html");
+      
+      // Remove scripts do React/Vite para evitar hidratação quebrada no HTML estático
+      const scripts = doc.querySelectorAll('script');
+      scripts.forEach(s => s.remove());
 
-      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      // Converte URLs relativas (src, href) em absolutas
+      const base = window.location.origin;
+      const elements = doc.querySelectorAll('[href], [src]');
+      elements.forEach(el => {
+        const attr = el.hasAttribute('href') ? 'href' : 'src';
+        const val = el.getAttribute(attr);
+        if (val && val.startsWith('/') && !val.startsWith('//')) {
+          el.setAttribute(attr, base + val);
+        }
+      });
+
+      // Garante que o CSS principal e fontes do Google estejam presentes (fallback caso não detectados)
+      const head = doc.head;
+      
+      // Se não houver estilos, vamos tentar injetar os que sabemos que o app usa
+      if (!doc.querySelector('link[rel="stylesheet"]')) {
+         const links = [
+           { rel: "preconnect", href: "https://fonts.googleapis.com" },
+           { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+           { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600;1,9..144,800&family=JetBrains+Mono:wght@400;700&family=Bebas+Neue&family=Archivo:wght@400;500;600;700;800;900&family=Anton&family=Work+Sans:wght@400;500;600;700;800&family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" }
+         ];
+         links.forEach(l => {
+           const linkEl = doc.createElement('link');
+           Object.entries(l).forEach(([k, v]) => linkEl.setAttribute(k, v));
+           head.appendChild(linkEl);
+         });
+      }
+
+      const finalHtml = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+
+      const blob = new Blob([finalHtml], { type: "text/html;charset=utf-8" });
       const blobUrl = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = blobUrl;
@@ -63,11 +97,22 @@ function DownloadCenter() {
         const res = await fetch(url);
         let html = await res.text();
 
-        // Converte URLs relativas em absolutas
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        
+        doc.querySelectorAll('script').forEach(s => s.remove());
+        
         const base = window.location.origin;
-        html = html.replace(/(href|src)="\/(?!\/)/g, `$1="${base}/`);
+        doc.querySelectorAll('[href], [src]').forEach(el => {
+          const attr = el.hasAttribute('href') ? 'href' : 'src';
+          const val = el.getAttribute(attr);
+          if (val && val.startsWith('/') && !val.startsWith('//')) {
+            el.setAttribute(attr, base + val);
+          }
+        });
 
-        zip.file(p.filename, html);
+        const finalHtml = "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
+        zip.file(p.filename, finalHtml);
       }
 
       setStatus("Gerando arquivo .zip...");
