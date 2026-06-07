@@ -120,7 +120,7 @@ function Body() {
 
       <div className="space-y-10">
         <div className="flex gap-5">
-          <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold" style={mono}>01</div>
+          <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold bg-[rgba(156,35,16,0.1)]" style={mono}>01</div>
           <div>
             <h3 className="font-bold text-xl mb-2">Conta e Depósito (Risco Zero)</h3>
             <p>
@@ -130,7 +130,7 @@ function Body() {
         </div>
 
         <div className="flex gap-5">
-          <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold" style={mono}>02</div>
+          <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold bg-[rgba(156,35,16,0.1)]" style={mono}>02</div>
           <div>
             <h3 className="font-bold text-xl mb-2">A Execução (Dobra em 24h)</h3>
             <p>
@@ -140,7 +140,7 @@ function Body() {
         </div>
 
         <div className="flex gap-5">
-          <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold" style={mono}>03</div>
+          <div className="flex-shrink-0 w-10 h-10 rounded-full border border-accent flex items-center justify-center text-accent font-bold bg-[rgba(156,35,16,0.1)]" style={mono}>03</div>
           <div>
             <h3 className="font-bold text-xl mb-2">Acerto de Contas (Só após o Lucro)</h3>
             <p>
