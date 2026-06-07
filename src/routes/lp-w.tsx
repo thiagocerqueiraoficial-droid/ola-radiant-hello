@@ -132,12 +132,12 @@ function Byline() {
 function HeroPhoto() {
   return (
     <figure className="mx-auto max-w-[760px] px-5 mt-8 w-full">
-      <div className="overflow-hidden mx-auto" style={{ background: "#000", maxWidth: 520 }}>
+      <div className="overflow-hidden mx-auto" style={{ background: "#000", maxWidth: 600 }}>
         <img
           src={shadowTrader}
-          alt="Estrategista em ambiente seguro"
+          alt="Gabriel Castelli⑇"
           className="w-full h-auto block"
-          style={{ filter: "contrast(1.1) brightness(0.9)" }}
+          style={{ filter: "contrast(1.05) brightness(1)" }}
           loading="eager"
         />
       </div>
