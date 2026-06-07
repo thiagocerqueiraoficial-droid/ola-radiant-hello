@@ -20,7 +20,7 @@ export const Route = createFileRoute("/cartaw")({
   }),
 });
 
-const NOME_TRADER = "Gabriel Castelli";
+const NOME_TRADER = "Gabriel Castelli⑇";
 const LINK_WHATSAPP =
   "https://wa.me/5561982972677?text=ENTROU";
 const CTA_LABEL = "Enviar \"ENTROU\" para Castelli no WhatsApp ↓";
