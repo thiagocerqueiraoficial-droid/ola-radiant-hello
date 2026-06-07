@@ -113,13 +113,16 @@ function DownloadCenter() {
             {loading === "zip" ? "📦 Compactando..." : "🎁 Baixar TUDO em .ZIP"}
           </button>
 
-          <button
-            onClick={downloadAll}
-            disabled={loading !== null}
-            className="px-6 py-4 bg-zinc-800 hover:bg-zinc-700 disabled:bg-zinc-700 font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
-          >
-            {loading === "all" ? "⬇ Baixando..." : "⬇ Baixar 1 por 1"}
-          </button>
+            <button
+              onClick={() => {
+                setLoading("all");
+                downloadAll();
+              }}
+              disabled={loading !== null}
+              className="px-6 py-4 bg-zinc-800 hover:bg-zinc-700 disabled:bg-zinc-700 font-bold rounded-lg transition-colors flex items-center justify-center gap-2"
+            >
+              {loading === "all" ? "⬇ Baixando..." : "⬇ Baixar 1 por 1"}
+            </button>
         </div>
 
         {status && (
