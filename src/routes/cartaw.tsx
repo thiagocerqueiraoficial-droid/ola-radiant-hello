@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/cartaw")({
-  component: cartaw,
+  component: CartaCastelli,
   head: () => ({
     meta: [
       { title: "O Acordo de Castelli · Gabriel Castelli" },
@@ -264,7 +264,7 @@ function Footer() {
   );
 }
 
-function cartaw() {
+function CartaCastelli() {
   return (
     <main
       style={{
